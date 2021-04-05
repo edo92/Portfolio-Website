@@ -13,3 +13,10 @@ export const heroContent = hero => {
     ],
   }
 }
+
+const defaultContent = {
+  title: "EJ Personal Portfolio",
+  author: "Eduard Jacobs",
+}
+
+export default defaultContent

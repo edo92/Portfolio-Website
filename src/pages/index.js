@@ -5,7 +5,7 @@ import { graphql } from "gatsby"
 import { Page } from "../components/SharedStyles"
 import PageMetadata from "../components/PageMetadata"
 import PageHero from "../components/PageHero"
-import content from "../content/home/homeContent"
+import * as content from "../content/home/homeContent"
 
 const HomePage = ({ data }) => {
   return (
