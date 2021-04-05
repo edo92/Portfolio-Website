@@ -83,7 +83,8 @@ const ActionCard = ({
           <Image
             fixed={image}
             alt={alt}
-            style={{ width: "100%", height: "250px" }}
+            imgStyle={{ objectFit: "contain" }}
+            style={{ width: "100%", height: "265px" }}
           />
         )}
         {isImageURL && (

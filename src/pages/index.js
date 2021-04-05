@@ -59,7 +59,7 @@ export default HomePage
 export const skillsListImgs = graphql`
   fragment skillsListImgs on File {
     childImageSharp {
-      fixed(height: 200) {
+      fixed(height: 600) {
         ...GatsbyImageSharpFixed
       }
     }
@@ -75,7 +75,7 @@ export const query = graphql`
         }
       }
     }
-    backendLogo: file(relativePath: { eq: "backend/backend-hero.png" }) {
+    backendLogo: file(relativePath: { eq: "backend/shuffled.png" }) {
       ...skillsListImgs
     }
     frontendLogo: file(relativePath: { eq: "frontend/frontend-hero.png" }) {
