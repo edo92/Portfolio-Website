@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react"
+import styled, { ThemeProvider } from "styled-components"
 
+import { lightTheme, darkTheme, GlobalStyle } from "../theme"
 import PropTypes from "prop-types"
 import "../styles/layout.css"
 
-import { lightTheme, darkTheme, GlobalStyle } from "../theme"
-import styled, { ThemeProvider } from "styled-components"
+import Navigation from "./Navigation"
 
 const ContentContainer = styled.div`
   position: relative;
@@ -52,12 +53,24 @@ const Layout = props => {
     }
   }, [])
 
+  const handleThemeChange = () => {
+    setIsDarkTheme(!isDarkTheme)
+    if (localStorage) {
+      localStorage.setItem("dark-theme", !isDarkTheme)
+    }
+  }
+
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle isDarkTheme={isDarkTheme} />
       <ContentContainer>
         <MainContainer>
           <MainContent>
+            <Navigation
+              handleThemeChange={handleThemeChange}
+              isDarkTheme={isDarkTheme}
+              path={props.path}
+            />
             <Main>{React.cloneElement(props.children, { isDarkTheme })}</Main>
           </MainContent>
         </MainContainer>
