@@ -4,10 +4,10 @@ import f4 from "../../static/features/f4.png"
 import f6 from "../../static/features/f6.png"
 import f8 from "../../static/features/f8.png"
 
-// import f2 from "../../static/features/f2.png"
-// import f3 from "../../static/features/f3.png"
-// import f5 from "../../static/features/f5.png"
-// import f7 from "../../static/features/f7.png"
+import f2 from "../../static/features/f2.png"
+import f3 from "../../static/features/f3.png"
+import f5 from "../../static/features/f5.png"
+import f7 from "../../static/features/f7.png"
 
 export const heroContent = data => {
   return {
@@ -80,11 +80,21 @@ export const features = {
   ],
   row2: [
     {
-      image: "../../static/features/f1.png",
-      title: "Mobile Apps",
-      description:
-        "Mobile apps can be developed from ground up using react native",
+      image: f5,
+      title: "APIs",
+      description: "APIs using nodejs express, django, flask",
     },
+    {
+      image: f3,
+      title: "CI CD",
+      description: "Continuous integration and deployment",
+    },
+    {
+      image: f7,
+      title: "Testing",
+      description: "Unit, integration, and end to end testing",
+    },
+    { image: f2 },
   ],
 }
 
