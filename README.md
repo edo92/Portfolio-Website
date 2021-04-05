@@ -1,4 +1,4 @@
-# Portfolio-Website
+# Portfolio Website
 
 <br/>
 <br/>
@@ -10,13 +10,13 @@
     <th align="center">
       <img width="441" height="1" />
       <p>
-        <small>Usage</small>
+        <small>Development</small>
       </p>
     </th>
     <th align="center">
       <img width="441" height="1" />
       <p>
-        <small>Examples</small>
+        <small>Production</small>
       </p>
     </th>
   </tr>
@@ -24,13 +24,13 @@
     <td>
       <a
         href="https://github.com/edo92/Portfolio-Website/blob/assets/usage.md"
-        >  Setup</a
+        >  Usage</a
       >
     </td>
     <td>
       <a
         href=""
-        >   Blink</a
+        >  Deployment</a
       >
     </td>
   </tr>
