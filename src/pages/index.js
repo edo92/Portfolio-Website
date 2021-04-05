@@ -17,7 +17,6 @@ import {
   CardContainer,
   H2,
   Divider,
-  Section,
 } from "../components/SharedStyles"
 
 const ActionIntro = styled.div`
@@ -53,38 +52,36 @@ const HomePage = ({ data }) => {
         description={"page-index-meta-description"}
       />
       <PageHero content={content.heroContent(data)} />
-      <Section id="skills-section">
-        <Content>
-          <ActionIntro>
-            <H2>
-              <Text id="Skills" />
-            </H2>
-          </ActionIntro>
-          <ActionCardContainer>
-            {content.skillsList(data).map((action, idx) => {
-              return (
-                <ActionCard
-                  key={idx}
-                  to={action.to}
-                  alt={action.alt}
-                  image={action.image}
-                  title={action.title}
-                  description={action.description}
-                />
-              )
-            })}
-          </ActionCardContainer>
-        </Content>
-      </Section>
+      <Content id="skills-section">
+        <ActionIntro>
+          <H2>
+            <Text id="Skills" />
+          </H2>
+        </ActionIntro>
+        <ActionCardContainer>
+          {content.skillsList(data).map((action, idx) => {
+            return (
+              <ActionCard
+                key={idx}
+                to={action.to}
+                alt={action.alt}
+                image={action.image}
+                title={action.title}
+                description={action.description}
+              />
+            )
+          })}
+        </ActionCardContainer>
+      </Content>
       <Content>
         <Divider />
         <FeaturesContainer>
           <Features gridItems={content.features.row1} />
           <Features gridItems={content.features.row2} />
         </FeaturesContainer>
+        <Divider />
       </Content>
       <Content>
-        <Divider />
         <H2>
           <Text id="projects" />
         </H2>
