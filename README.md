@@ -51,10 +51,8 @@
 </table>
 
 </br>
-</br>
 
 ## Elements
-
 <table>
   <tr>
     <th align="center">
