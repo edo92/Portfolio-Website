@@ -11,6 +11,16 @@ import { IoCodeOutline } from "react-icons/io5"
 import MoonIcon from "../assets/svg/moonicon.svg"
 import SunIcon from "../assets/svg/sunicon.svg"
 
+const MoonIconCustom = styled(MoonIcon)`
+  height: 22px;
+  margin-right: 4px;
+`
+
+const SunCustomIcon = styled(SunIcon)`
+  height: 31px;
+  margin-left: 4px;
+`
+
 import {
   MdAdd,
   MdClose,
@@ -29,8 +39,8 @@ const Icon = ({ name, size, className }) => {
       {name === "chevronDown" && <MdExpandMore />}
       {name === "arrowRight" && <MdArrowForward />}
       {name === "close" && <MdClose />}
-      {name === "darkTheme" && <MoonIcon style={{ height: "24px" }} />}
-      {name === "lightTheme" && <SunIcon style={{ height: "31px" }} />}
+      {name === "darkTheme" && <MoonIconCustom />}
+      {name === "lightTheme" && <SunCustomIcon />}
       {name === "github" && <FaGithub />}
       {name === "info" && <MdInfoOutline />}
       {name === "language" && <MdLanguage />}
