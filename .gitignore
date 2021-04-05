@@ -1,7 +1,0 @@
-.cache
-.vscode
-public
-yarn.lock
-node_modules
-bin
-.DS_Store
