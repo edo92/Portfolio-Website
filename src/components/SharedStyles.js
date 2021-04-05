@@ -28,3 +28,11 @@ export const CardContainer = styled.div`
   margin-left: -1rem;
   margin-right: -1rem;
 `
+
+export const Divider = styled.div`
+  margin-bottom: 4rem;
+  margin-top: 4rem;
+  width: 10%;
+  height: 0.25rem;
+  background-color: ${props => props.theme.colors.homeDivider};
+`

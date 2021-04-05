@@ -6,8 +6,16 @@ import * as content from "../content/home/homeContent"
 import PageMetadata from "../components/PageMetadata"
 import PageHero from "../components/PageHero"
 import ActionCard from "../components/ActionCard"
+import Features from "../components/Features"
+
 import Text from "../components/Text"
-import { Page, Content, H2, CardContainer } from "../components/SharedStyles"
+import {
+  Page,
+  Content,
+  CardContainer,
+  H2,
+  Divider,
+} from "../components/SharedStyles"
 
 const ActionIntro = styled.div`
   display: flex;
@@ -19,6 +27,10 @@ const ActionIntro = styled.div`
 const ActionCardContainer = styled(CardContainer)`
   justify-content: center;
   margin-bottom: 3rem;
+`
+
+const FeaturesContainer = styled.div`
+  padding-top: 2rem;
 `
 
 const HomePage = ({ data }) => {
@@ -49,6 +61,12 @@ const HomePage = ({ data }) => {
             )
           })}
         </ActionCardContainer>
+      </Content>
+      <Content>
+        <Divider />
+        <FeaturesContainer>
+          <Features gridItems={content.features.row1} />
+        </FeaturesContainer>
       </Content>
     </Page>
   )

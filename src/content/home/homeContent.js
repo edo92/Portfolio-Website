@@ -1,3 +1,14 @@
+// Features images for features component
+import f1 from "../../static/features/f1.png"
+import f4 from "../../static/features/f4.png"
+import f6 from "../../static/features/f6.png"
+import f8 from "../../static/features/f8.png"
+
+// import f2 from "../../static/features/f2.png"
+// import f3 from "../../static/features/f3.png"
+// import f5 from "../../static/features/f5.png"
+// import f7 from "../../static/features/f7.png"
+
 export const heroContent = data => {
   return {
     title: "PROFESSIONAL SKILLS",
@@ -40,6 +51,41 @@ export const skillsList = data => {
       description: "Mobile development using React Native or Expo frameworks",
     },
   ]
+}
+
+export const features = {
+  row1: [
+    {
+      image: f1,
+      title: "Mobile Apps",
+      description:
+        "Mobile apps can be developed from ground up using react native",
+    },
+    {
+      image: f6,
+      title: "Web UI/UX",
+      description:
+        "Web Applications can be built using react/angular, css, sass",
+    },
+    {
+      image: f4,
+      title: "Features",
+      description: "Features can be adopted to existing website",
+    },
+    {
+      image: f8,
+      title: "Web UI/UX",
+      description: "Web Applications can be built using react, css, sass",
+    },
+  ],
+  row2: [
+    {
+      image: "../../static/features/f1.png",
+      title: "Mobile Apps",
+      description:
+        "Mobile apps can be developed from ground up using react native",
+    },
+  ],
 }
 
 const defaultContent = {
