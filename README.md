@@ -34,4 +34,18 @@
       >
     </td>
   </tr>
+   <tr>
+    <td>
+      <a
+        href="https://github.com/edo92/Portfolio-Website/blob/assets/usage.md"
+        > Development Issues</a
+      >
+    </td>
+    <td>
+      <a
+        href=""
+        >  Production Issues</a
+      >
+    </td>
+  </tr>
 </table>
