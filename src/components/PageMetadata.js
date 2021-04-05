@@ -34,7 +34,9 @@ const PageMetadata = ({ description, meta, title, image, canonicalUrl }) => {
             }
           }
         }
-        ogImageClient: file(relativePath: { eq: "client/client-hero.png" }) {
+        ogImageClient: file(
+          relativePath: { eq: "frontend/frontend-hero.png" }
+        ) {
           childImageSharp {
             fixed(width: 1200) {
               src
@@ -72,7 +74,7 @@ const PageMetadata = ({ description, meta, title, image, canonicalUrl }) => {
         if (pathname.includes("/backend")) {
           ogImage = ogImageBackend.childImageSharp.fixed.src
         }
-        if (pathname.includes("/client")) {
+        if (pathname.includes("/frontend")) {
           ogImage = ogImageClient.childImageSharp.fixed.src
         }
         if (pathname.includes("/mobile")) {

@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { Mixins } from "../theme"
 
 export const Page = styled.div`
   display: flex;
@@ -12,4 +13,18 @@ export const Page = styled.div`
 export const Content = styled.div`
   padding: 1rem 2rem;
   width: 100%;
+`
+
+export const H2 = styled.h2`
+  ${Mixins.textLevel2}
+  @media (max-width: ${props => props.theme.breakpoints.m}) {
+    font-size: 1.5rem;
+  }
+`
+
+export const CardContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -1rem;
+  margin-right: -1rem;
 `
