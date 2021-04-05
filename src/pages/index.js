@@ -1,10 +1,11 @@
 import React from "react"
+import { Page } from "../components/SharedStyles"
 
 const HomePage = () => {
   return (
-    <div>
+    <Page>
       <h1>homePage</h1>
-    </div>
+    </Page>
   )
 }
 
