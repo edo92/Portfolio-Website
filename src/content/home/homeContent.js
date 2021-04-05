@@ -30,24 +30,24 @@ export const skillsList = data => {
   return [
     {
       image: data.backendLogo.childImageSharp.fixed,
-      title: "backend",
-      to: "/backend/",
+      title: "Backend",
+      to: "/skills/backend",
       alt: "backend development",
       description:
         "Developing Api and rest-api using Node.js or Django frameworks",
     },
     {
       image: data.frontendLogo.childImageSharp.fixed,
-      title: "frontend",
-      to: "/client/",
+      title: "Frontend",
+      to: "/skills/client/",
       alt: "frontend development",
       description:
         "Developing front end applications using React or Angular frameworks",
     },
     {
       image: data.mobileLogo.childImageSharp.fixed,
-      title: "mobile",
-      to: "/mobile/",
+      title: "Mobile",
+      to: "/skills/mobile/",
       alt: "Mobile development",
       description: "Mobile development using React Native or Expo frameworks",
     },

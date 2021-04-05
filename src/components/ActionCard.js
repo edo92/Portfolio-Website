@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
+import Link from "./Link"
 
 const Content = styled.div`
   padding: 1.5rem;
@@ -42,7 +43,7 @@ const Image = styled(Img)`
   }
 `
 
-const Card = styled.a`
+const Card = styled(Link)`
   text-decoration: none;
   flex: 1 1 372px;
   color: ${props => props.theme.colors.text};
