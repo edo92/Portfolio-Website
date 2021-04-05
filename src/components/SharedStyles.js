@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { Mixins } from "../theme"
+import Link from "./Link"
 
 export const Page = styled.div`
   display: flex;
@@ -37,7 +38,7 @@ export const Divider = styled.div`
   background-color: ${props => props.theme.colors.homeDivider};
 `
 
-export const NavLink = styled.a`
+export const NavLink = styled(Link)`
   text-decoration: none;
   margin-right: 2rem;
   color: ${props => props.theme.colors.text};
@@ -49,8 +50,5 @@ export const NavLink = styled.a`
     svg {
       fill: ${props => props.theme.colors.primary};
     }
-  }
-  &.active {
-    font-weight: bold;
   }
 `

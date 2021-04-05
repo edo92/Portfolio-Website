@@ -52,7 +52,7 @@ const InnerContent = styled.div`
 
 const LeftItems = styled.ul`
   margin: 0;
-  margin-left: 2rem;
+  margin-left: 1.6rem;
   display: flex;
   align-items: center;
   list-style-type: none;
@@ -100,8 +100,7 @@ const Navigation = () => {
                       ) : (
                         <NavListItem key={idx}>
                           <NavLink
-                            href={section.to}
-                            target={section.newTab && "_blank"}
+                            to={section.to}
                             isPartiallyActive={section.isPartiallyActive}
                           >
                             <Text id={section.text} />

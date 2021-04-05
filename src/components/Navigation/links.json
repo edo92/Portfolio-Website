@@ -20,7 +20,8 @@
     },
     {
       "text": "about",
-      "to": "/about"
+      "to": "/about/",
+      "ariaLabel": "about-page-link"
     },
     {
       "text": "resume",
