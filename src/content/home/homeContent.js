@@ -1,13 +1,13 @@
 // Features images for features component
-import f1 from "../../static/features/f1.png"
-import f4 from "../../static/features/f4.png"
-import f6 from "../../static/features/f6.png"
-import f8 from "../../static/features/f8.png"
+import f1 from "../../assets/features/f1.png"
+import f4 from "../../assets/features/f4.png"
+import f6 from "../../assets/features/f6.png"
+import f8 from "../../assets/features/f8.png"
 
-import f2 from "../../static/features/f2.png"
-import f3 from "../../static/features/f3.png"
-import f5 from "../../static/features/f5.png"
-import f7 from "../../static/features/f7.png"
+import f2 from "../../assets/features/f2.png"
+import f3 from "../../assets/features/f3.png"
+import f5 from "../../assets/features/f5.png"
+import f7 from "../../assets/features/f7.png"
 
 export const heroContent = data => {
   return {

@@ -2,9 +2,10 @@ import React from "react"
 import styled from "styled-components"
 
 import { NavLink } from "../../components/SharedStyles"
+import NavDropdown from "./NavDropdown"
 import links from "./links.json"
 import Text from "../Text"
-import NavDropdown from "./NavDropdown"
+import Icon from "../Icon"
 
 const NavContainer = styled.div`
   position: sticky;
@@ -82,7 +83,18 @@ const NavListItem = styled.div`
   }
 `
 
-const Navigation = () => {
+const ThemeToggle = styled.span`
+  cursor: pointer;
+  margin-left: 1rem;
+  display: flex;
+  align-items: center;
+`
+
+const NavIcon = styled(Icon)`
+  fill: ${props => props.theme.colors.text};
+`
+
+const Navigation = ({ handleThemeChange, isDarkTheme }) => {
   return (
     <NavContainer>
       <StyledNav>
@@ -112,7 +124,11 @@ const Navigation = () => {
                 )
               })}
             </LeftItems>
-            <RightItems></RightItems>
+            <RightItems>
+              <ThemeToggle onClick={handleThemeChange}>
+                <NavIcon name={isDarkTheme ? "darkTheme" : "lightTheme"} />
+              </ThemeToggle>
+            </RightItems>
           </InnerContent>
         </NavContent>
       </StyledNav>

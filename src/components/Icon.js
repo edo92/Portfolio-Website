@@ -3,10 +3,16 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import { IconContext } from "react-icons"
 import { FaGithub, FaLinkedinIn, FaYoutube, FaDiscord } from "react-icons/fa"
+
+import { BsQuestionSquareFill } from "react-icons/bs"
+import { IoCodeDownload } from "react-icons/io5"
+import { IoCodeOutline } from "react-icons/io5"
+
+import MoonIcon from "../assets/svg/moonicon.svg"
+import SunIcon from "../assets/svg/sunicon.svg"
+
 import {
   MdAdd,
-  // MdBrightness2,
-  // MdWbSunny,
   MdClose,
   MdExpandMore,
   MdArrowForward,
@@ -15,11 +21,6 @@ import {
   MdMenu,
   MdSearch,
 } from "react-icons/md"
-import { BsQuestionSquareFill } from "react-icons/bs"
-import { IoCodeDownload } from "react-icons/io5"
-import { IoCodeOutline } from "react-icons/io5"
-import MoonIcon from "../static/svg/moonicon.svg"
-import SunIcon from "../static/svg/sunicon.svg"
 
 const Icon = ({ name, size, className }) => {
   return (

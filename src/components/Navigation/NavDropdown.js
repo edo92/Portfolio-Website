@@ -1,12 +1,11 @@
 import React, { useState, createRef } from "react"
-import { useOnClickOutside } from "../../hooks/useOnClickOutside"
-
-import Text from "../Text"
-
 import styled from "styled-components"
 import { motion } from "framer-motion"
 
 import Icon from "../Icon"
+import Text from "../Text"
+import { NavLink } from "../../components/SharedStyles"
+import { useOnClickOutside } from "../../hooks/useOnClickOutside"
 
 const NavListItem = styled.div`
   white-space: nowrap;
@@ -62,20 +61,9 @@ const DropdownItem = styled.li`
   }
 `
 
-const NavLink = styled.a`
-  text-decoration: none;
+const NavLinkItem = styled(NavLink)`
   display: block;
   padding: 0.5rem;
-  color: ${props => props.theme.colors.text};
-  svg {
-    fill: ${props => props.theme.colors.text200};
-  }
-  &:hover {
-    color: ${props => props.theme.colors.primary};
-    svg {
-      fill: ${props => props.theme.colors.primary};
-    }
-  }
 `
 
 const listVariants = {
@@ -115,13 +103,12 @@ const DropDown = ({ section, hasSubNav }) => {
       <DropdownTitle
         onClick={() => setIsOpen(!isOpen)}
         onKeyDown={onKeyDownHandler}
-        tabIndex="0"
       >
         <Text id={section.text} />
         <StyledIcon isOpen={isOpen} name="chevronDown" />
       </DropdownTitle>
 
-      {section.items ? (
+      {section.items && (
         <DropdownList
           hasSubNav={hasSubNav}
           animate={isOpen ? "open" : "closed"}
@@ -131,15 +118,17 @@ const DropDown = ({ section, hasSubNav }) => {
           {section.items.map((item, idx) => {
             return (
               <DropdownItem key={idx} onClick={() => setIsOpen(false)}>
-                <NavLink href={item.to}>
+                <NavLinkItem
+                  href={item.to}
+                  tabIndex="-1"
+                  isPartiallyActive={false}
+                >
                   <Text id={item.text} />
-                </NavLink>
+                </NavLinkItem>
               </DropdownItem>
             )
           })}
         </DropdownList>
-      ) : (
-        <h1>hello</h1>
       )}
     </NavListItem>
   )
