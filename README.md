@@ -51,6 +51,9 @@
 </table>
 
 </br>
+</br>
+
+## Elements
 
 <table>
   <tr>
@@ -71,13 +74,13 @@
     <td>
       <a
         href="https://github.com/edo92/Portfolio-Website/blob/assets/usage.md"
-        >  Usage</a
+        >  Templates and Components</a
       >
     </td>
     <td>
       <a
         href=""
-        >  Deployment</a
+        >  Graphic Art</a
       >
     </td>
   </tr>
