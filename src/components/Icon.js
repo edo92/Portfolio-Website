@@ -12,13 +12,13 @@ import MoonIcon from "../assets/svg/moonicon.svg"
 import SunIcon from "../assets/svg/sunicon.svg"
 
 const MoonIconCustom = styled(MoonIcon)`
-  height: 22px;
-  margin-right: 4px;
+  height: 23px;
+  margin-right: 5px;
 `
 
 const SunCustomIcon = styled(SunIcon)`
   height: 31px;
-  margin-left: 4px;
+  margin-left: 2px;
 `
 
 import {
