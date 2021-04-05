@@ -1,0 +1,65 @@
+{
+  "socialLinks": [
+    {
+      "icon": "github",
+      "to": "https://github.com/edo92"
+    },
+    {
+      "icon": "linkedin",
+      "to": "https://www.linkedin.com/in/the-ej/"
+    }
+  ],
+  "linkSections": [
+    {
+      "title": "Skills",
+      "links": [
+        {
+          "to": "/client/",
+          "text": "Frontend"
+        },
+        {
+          "to": "/backend/",
+          "text": "Backend"
+        },
+        {
+          "to": "/mobile/",
+          "text": "Mobile"
+        }
+      ]
+    },
+    {
+      "title": "projects",
+      "links": [
+        {
+          "to": "/proj1/",
+          "text": "Project 1"
+        },
+        {
+          "to": "/proj2/",
+          "text": "Project 2"
+        },
+        {
+          "to": "/proj3/",
+          "text": "Project 3"
+        }
+      ]
+    },
+    {
+      "title": "about",
+      "links": [
+        {
+          "to": "https://github.com/edo92/edo92/blob/9641fa3a5e4c0c9b7055d7cea2d15c49d308b733/resume/resume.pdf",
+          "text": "resume"
+        },
+        {
+          "to": "/about",
+          "text": "about"
+        },
+        {
+          "to": "/about#contact-section/",
+          "text": "contact"
+        }
+      ]
+    }
+  ]
+}

@@ -1,8 +1,10 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
+import { cloneDeep } from "lodash"
 
 import { NavLink } from "../../components/SharedStyles"
 import NavDropdown from "./NavDropdown"
+import MobileNavMenu from "./Mobile"
 import links from "./links.json"
 import Text from "../Text"
 import Icon from "../Icon"
@@ -94,7 +96,54 @@ const NavIcon = styled(Icon)`
   fill: ${props => props.theme.colors.text};
 `
 
-const Navigation = ({ handleThemeChange, isDarkTheme }) => {
+const MobileIcons = styled.div`
+  padding-top: 10px;
+  display: none;
+  @media (max-width: ${props => props.theme.breakpoints.l}) {
+    display: flex;
+  }
+`
+
+const NavMobileButton = styled.span`
+  outline: none;
+  margin-left: 1rem;
+`
+
+const MenuIcon = styled(Icon)`
+  fill: ${props => props.theme.colors.text};
+  display: none;
+  @media (max-width: ${props => props.theme.breakpoints.l}) {
+    display: block;
+    cursor: pointer;
+  }
+`
+
+const SubNav = styled.nav`
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+  display: flex;
+  background: ${props => props.theme.colors.ednBackground};
+  border-bottom: 1px solid ${props => props.theme.colors.border};
+  /* TODO sort out mobile */
+  @media (max-width: ${props => props.theme.breakpoints.l}) {
+    display: none;
+  }
+`
+
+const Navigation = ({ handleThemeChange, isDarkTheme, path }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  let mobileLinkSections = cloneDeep(links.linkSections)
+  const shouldShowSubNav = path.includes("/developers/")
+
+  const handleMenuToggle = item => {
+    if (item === "menu") {
+      setIsMenuOpen(!isMenuOpen)
+    } else {
+      setIsMenuOpen(false)
+    }
+  }
+
   return (
     <NavContainer>
       <StyledNav>
@@ -114,6 +163,7 @@ const Navigation = ({ handleThemeChange, isDarkTheme }) => {
                           <NavLink
                             to={section.to}
                             isPartiallyActive={section.isPartiallyActive}
+                            hasSubNav={shouldShowSubNav}
                           >
                             <Text id={section.text} />
                           </NavLink>
@@ -131,7 +181,41 @@ const Navigation = ({ handleThemeChange, isDarkTheme }) => {
             </RightItems>
           </InnerContent>
         </NavContent>
+        {/* Mobile */}
+        <MobileNavMenu
+          isMenuOpen={isMenuOpen}
+          isDarkTheme={isDarkTheme}
+          toggleMenu={handleMenuToggle}
+          toggleTheme={handleThemeChange}
+          linkSections={mobileLinkSections}
+        />
+        <MobileIcons>
+          <NavMobileButton
+            onClick={() => handleMenuToggle("menu")}
+            onKeyDown={() => handleMenuToggle("menu")}
+            role="button"
+            tabIndex="0"
+            aria-label={"aria-toggle-menu-button"}
+          >
+            <MenuIcon name="menu" />
+          </NavMobileButton>
+        </MobileIcons>
       </StyledNav>
+      {shouldShowSubNav && (
+        <SubNav>
+          {links.ednLinks.map((link, idx) => {
+            return (
+              <NavLink
+                key={idx}
+                to={link.to}
+                isPartiallyActive={link.isPartiallyActive}
+              >
+                <Text id={link.text} />
+              </NavLink>
+            )
+          })}
+        </SubNav>
+      )}
     </NavContainer>
   )
 }

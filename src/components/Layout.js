@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react"
 import styled, { ThemeProvider } from "styled-components"
 
 import { lightTheme, darkTheme, GlobalStyle } from "../theme"
+import Navigation from "./Navigation"
+import Footer from "./Footer"
+
 import PropTypes from "prop-types"
 import "../styles/layout.css"
-
-import Navigation from "./Navigation"
 
 const ContentContainer = styled.div`
   position: relative;
@@ -74,6 +75,7 @@ const Layout = props => {
             <Main>{React.cloneElement(props.children, { isDarkTheme })}</Main>
           </MainContent>
         </MainContainer>
+        <Footer />
       </ContentContainer>
     </ThemeProvider>
   )
