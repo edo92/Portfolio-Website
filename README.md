@@ -3,7 +3,7 @@
 <br/>
 <br/>
 
-## Getting Started ![icon](https://raw.githubusercontent.com/edo92/Portfolio-Website/assets/images/rocket-icon.png)  
+## Getting Started
 
 <table>
   <tr>
