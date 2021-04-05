@@ -18,7 +18,8 @@ export const heroContent = data => {
     alt: "page-wallets-alt",
     buttons: [
       {
-        path: "/wallets/find-wallet/",
+        path: "/#skills-section",
+        to: "/backend",
         content: "Find Out More",
       },
     ],

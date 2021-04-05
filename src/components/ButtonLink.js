@@ -1,8 +1,9 @@
 import React from "react"
 import styled from "styled-components"
 import { margin } from "styled-system"
+import Link from "./Link"
 
-const StyledButton = styled.a`
+const StyledButton = styled(Link)`
   text-decoration: none;
   display: inline-block;
   white-space: nowrap;
