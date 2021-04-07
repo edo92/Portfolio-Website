@@ -8,7 +8,7 @@ import ActionCard from "../components/ActionCard"
 
 import PageMetadata from "../components/PageMetadata"
 import PageHero from "../components/PageHero"
-import Features from "../components/Features"
+// import Features from "../components/Features"
 import ButtonLink from "../components/ButtonLink"
 import Text from "../components/Text"
 import {
@@ -16,7 +16,8 @@ import {
   Content,
   CardContainer,
   H2,
-  Divider,
+  // Divider,
+  // GrayContainer,
 } from "../components/SharedStyles"
 
 const ActionIntro = styled.div`
@@ -31,17 +32,19 @@ const ActionCardContainer = styled(CardContainer)`
   margin-bottom: 3rem;
 `
 
-const FeaturesContainer = styled.div`
-  padding-top: 2rem;
-`
+// const FeaturesContainer = styled.div`
+//   padding-top: 2rem;
+// `
 
 const CalloutCardContainer = styled(CardContainer)`
   margin: 0;
+  gap: 2rem;
 `
 
 const StyledCallout = styled(Callout)`
   flex: 1 1 424px;
   min-height: 100%;
+  margin: 8rem 0rem 0rem 0rem;
 `
 
 const HomePage = ({ data }) => {
@@ -54,9 +57,7 @@ const HomePage = ({ data }) => {
       <PageHero content={content.heroContent(data)} />
       <Content id="skills-section">
         <ActionIntro>
-          <H2>
-            <Text id="Skills" />
-          </H2>
+          <H2>Skills</H2>
         </ActionIntro>
         <ActionCardContainer>
           {content.skillsList(data).map((action, idx) => {
@@ -73,18 +74,16 @@ const HomePage = ({ data }) => {
           })}
         </ActionCardContainer>
       </Content>
+      {/* <GrayContainer>
+        <Content>
+          <FeaturesContainer>
+            <Features gridItems={content.features.row1} />
+            <Features gridItems={content.features.row2} />
+          </FeaturesContainer>
+        </Content>
+      </GrayContainer> */}
       <Content>
-        <Divider />
-        <FeaturesContainer>
-          <Features gridItems={content.features.row1} />
-          <Features gridItems={content.features.row2} />
-        </FeaturesContainer>
-        <Divider />
-      </Content>
-      <Content>
-        <H2>
-          <Text id="projects" />
-        </H2>
+        <H2>Projects</H2>
         <CalloutCardContainer>
           <StyledCallout
             image={data.projicon.childImageSharp.fixed}
