@@ -8,7 +8,7 @@ import ActionCard from "../components/ActionCard"
 
 import PageMetadata from "../components/PageMetadata"
 import PageHero from "../components/PageHero"
-// import Features from "../components/Features"
+import Features from "../components/Features"
 import ButtonLink from "../components/ButtonLink"
 import Text from "../components/Text"
 import {
@@ -16,15 +16,14 @@ import {
   Content,
   CardContainer,
   H2,
-  // Divider,
-  // GrayContainer,
+  Divider,
+  GrayContainer,
 } from "../components/SharedStyles"
 
 const ActionIntro = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 3rem;
-  margin-top: 3rem;
+  margin: 1rem 0 1rem 0;
 `
 
 const ActionCardContainer = styled(CardContainer)`
@@ -32,9 +31,9 @@ const ActionCardContainer = styled(CardContainer)`
   margin-bottom: 3rem;
 `
 
-// const FeaturesContainer = styled.div`
-//   padding-top: 2rem;
-// `
+const FeaturesContainer = styled.div`
+  padding-top: 2rem;
+`
 
 const CalloutCardContainer = styled(CardContainer)`
   margin: 0;
@@ -44,7 +43,7 @@ const CalloutCardContainer = styled(CardContainer)`
 const StyledCallout = styled(Callout)`
   flex: 1 1 424px;
   min-height: 100%;
-  margin: 8rem 0rem 0rem 0rem;
+  margin: 8rem 0rem 1rem 0rem;
 `
 
 const HomePage = ({ data }) => {
@@ -74,14 +73,18 @@ const HomePage = ({ data }) => {
           })}
         </ActionCardContainer>
       </Content>
-      {/* <GrayContainer>
-        <Content>
-          <FeaturesContainer>
-            <Features gridItems={content.features.row1} />
-            <Features gridItems={content.features.row2} />
-          </FeaturesContainer>
-        </Content>
-      </GrayContainer> */}
+      <Divider />
+      <Content>
+        <GrayContainer>
+          <Content>
+            <FeaturesContainer>
+              <Features gridItems={content.features.row1} />
+              <Features gridItems={content.features.row2} />
+            </FeaturesContainer>
+          </Content>
+        </GrayContainer>
+      </Content>
+      <Divider />
       <Content>
         <H2>Projects</H2>
         <CalloutCardContainer>

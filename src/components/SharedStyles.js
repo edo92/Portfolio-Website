@@ -55,8 +55,6 @@ export const NavLink = styled(Link)`
 
 export const GrayContainer = styled.div`
   width: 100%;
-  padding: 4rem 0rem;
-  margin-top: 2rem;
   background: ${props => props.theme.colors.grayBackground};
   box-shadow: inset 0px 1px 0px
     ${props => props.theme.colors.tableItemBoxShadow};
