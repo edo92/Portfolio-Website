@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
+import PageMetadata from "../components/PageMetadata"
 import content from "../content/about/about.json"
 import Text from "../components/Text"
 import Callout from "../components/Callout"
@@ -115,6 +116,10 @@ const SubmitContact = styled.div`
 const AboutPage = () => {
   return (
     <Page>
+      <PageMetadata
+        title={content.metadata.title}
+        description={content.metadata.description}
+      />
       <Content>
         <TwoColumnContent>
           <IntroColumn>

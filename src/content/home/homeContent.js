@@ -9,6 +9,11 @@ import f3 from "../../assets/features/f3.png"
 import f5 from "../../assets/features/f5.png"
 import f7 from "../../assets/features/f7.png"
 
+export const metadata = {
+  title: "EJ Resume",
+  description: "Eduard Jacobs Personal Portfolio Website",
+}
+
 export const heroContent = data => {
   return {
     title: "PROFESSIONAL SKILLS",

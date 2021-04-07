@@ -54,9 +54,8 @@ const PageMetadata = ({ description, meta, title, image, canonicalUrl }) => {
     `
   )
 
-  const desc = description || "site-description"
-
-  const siteTitle = "site-title"
+  const desc = description || "Eduard Jacobs Personal Profolio Website"
+  const siteTitle = "EJ Resume"
 
   return (
     <Location>
@@ -147,10 +146,10 @@ const PageMetadata = ({ description, meta, title, image, canonicalUrl }) => {
 }
 
 PageMetadata.defaultProps = {
-  description: ``,
-  meta: [],
+  description: `Eduard Jacobs Personal Portfolio Webaite`,
+  meta: ["portfolio", "portfolio website", "portfolio ui/ux"],
   image: ``,
-  title: ``,
+  title: `EJ Resume`,
 }
 
 PageMetadata.propTypes = {

@@ -20,7 +20,7 @@ import {
   GrayContainer,
 } from "../components/SharedStyles"
 
-const ActionIntro = styled.div`
+const SectionIntro = styled.div`
   display: flex;
   flex-direction: column;
   margin: 3rem 0 1rem 0;
@@ -50,14 +50,14 @@ const HomePage = ({ data }) => {
   return (
     <Page>
       <PageMetadata
-        title={"page-index-meta-title"}
-        description={"page-index-meta-description"}
+        title={content.metadata.title}
+        description={content.metadata.description}
       />
       <PageHero content={content.heroContent(data)} />
       <Content id="skills-section">
-        <ActionIntro>
+        <SectionIntro>
           <H2>Skills</H2>
-        </ActionIntro>
+        </SectionIntro>
         <ActionCardContainer>
           {content.skillsList(data).map((action, idx) => {
             return (
@@ -86,7 +86,9 @@ const HomePage = ({ data }) => {
       </Content>
       <Divider />
       <Content>
-        <H2>Projects</H2>
+        <SectionIntro>
+          <H2>Projects</H2>
+        </SectionIntro>
         <CalloutCardContainer>
           <StyledCallout
             image={data.projicon.childImageSharp.fixed}

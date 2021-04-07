@@ -1,4 +1,8 @@
 {
+  "metadata": {
+    "title": "EJ About",
+    "description": "Portfolio About me"
+  },
   "about": {
     "name": "Eduard Jacobs",
     "title": "Full Stack Software Developer",
