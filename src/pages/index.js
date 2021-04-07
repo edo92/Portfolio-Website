@@ -23,7 +23,7 @@ import {
 const ActionIntro = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 1rem 0 1rem 0;
+  margin: 3rem 0 1rem 0;
 `
 
 const ActionCardContainer = styled(CardContainer)`
