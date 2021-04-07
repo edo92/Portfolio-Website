@@ -22,10 +22,10 @@ const FooterTop = styled.div`
 `
 
 const SocialIcons = styled.div`
-  margin: 1rem 0;
+  margin: 1.3rem 0;
 `
 const SocialIcon = styled(Icon)`
-  margin-left: 1rem;
+  margin-right: 1.5rem;
   width: 2rem;
 
   @media (max-width: ${props => props.theme.breakpoints.s}) {
@@ -35,6 +35,7 @@ const SocialIcon = styled(Icon)`
 `
 
 const LinkGrid = styled.div`
+  padding: 0rem 1rem 0 1rem;
   display: grid;
   grid-template-columns: repeat(6, auto);
   grid-gap: 1rem;
