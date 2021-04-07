@@ -51,7 +51,7 @@ const ButtonLink = ({ to, isSecondary, children, className, ...props }) => {
     )
   }
   return (
-    <Primary to={to} hideArrow={true} className={className} {...props}>
+    <Primary to={to || ""} hideArrow={true} className={className} {...props}>
       {children}
     </Primary>
   )

@@ -1,26 +1,15 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { IconContext } from "react-icons"
-import { FaGithub, FaLinkedinIn, FaYoutube, FaDiscord } from "react-icons/fa"
-
-import { BsQuestionSquareFill } from "react-icons/bs"
-import { IoCodeDownload } from "react-icons/io5"
-import { IoCodeOutline } from "react-icons/io5"
 
 import MoonIcon from "../assets/svg/moonicon.svg"
 import SunIcon from "../assets/svg/sunicon.svg"
 
-const MoonIconCustom = styled(MoonIcon)`
-  height: 30px;
-  padding: 4px;
-  margin-right: 2px;
-`
-
-const SunCustomIcon = styled(SunIcon)`
-  height: 30px;
-`
-
+import { GrLinkedin } from "react-icons/gr"
+import { IconContext } from "react-icons"
+import { BsQuestionSquareFill } from "react-icons/bs"
+import { IoCodeDownload, IoCodeOutline } from "react-icons/io5"
+import { FaGithub, FaLinkedinIn, FaYoutube, FaDiscord } from "react-icons/fa"
 import {
   MdAdd,
   MdClose,
@@ -31,6 +20,16 @@ import {
   MdMenu,
   MdSearch,
 } from "react-icons/md"
+
+const MoonIconCustom = styled(MoonIcon)`
+  height: 30px;
+  padding: 4px;
+  margin-right: 2px;
+`
+
+const SunCustomIcon = styled(SunIcon)`
+  height: 30px;
+`
 
 const Icon = ({ name, size, className }) => {
   return (
@@ -46,6 +45,7 @@ const Icon = ({ name, size, className }) => {
       {name === "language" && <MdLanguage />}
       {name === "menu" && <MdMenu />}
       {name === "linkedin" && <FaLinkedinIn />}
+      {name === "linkedinGR" && <GrLinkedin />}
       {name === "search" && <MdSearch />}
       {name === "youtube" && <FaYoutube />}
       {name === "discord" && <FaDiscord />}

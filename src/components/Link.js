@@ -6,9 +6,6 @@ import { trackCustomEvent } from "../utils/matomo"
 import Icon from "./Icon"
 
 const HASH_PATTERN = /^#.*/
-// const DOMAIN_PATTERN = /^(?:https?:)?[/]{2,}([^/]+)/
-// const INTERNAL_PATTERN = /^\/(?!\/)/
-// const FILE_PATTERN = /.*[/](.+\.[^/]+?)([/].*?)?([#?].*)?$/
 
 const isHashLink = to => HASH_PATTERN.test(to)
 
@@ -65,14 +62,11 @@ const Link = ({
   // markdown pages pass `href`, not `to`
   to = to || href
 
-  const isExternal = to.includes("http") || to.includes("mailto:")
+  const isExternal = to && (to.includes("http") || to.includes("mailto:"))
   const isHash = isHashLink(to)
-  const isGlossary = to.includes("glossary")
-  const isStatic = to.includes("static")
+  const isGlossary = to && to.includes("glossary")
+  const isStatic = to && to.includes("static")
 
-  // Must use <a> tags for anchor links
-  // Otherwise <Link> functionality will navigate to homepage
-  // See https://github.com/gatsbyjs/gatsby/issues/21909
   if (isHash) {
     return (
       <a className={className} href={to}>
@@ -81,8 +75,6 @@ const Link = ({
     )
   }
 
-  // Links to static image assets must use <a> to avoid
-  // <Link> redirection. Opens in separate window.
   if (isStatic) {
     return (
       <a
@@ -126,7 +118,6 @@ const Link = ({
     )
   }
 
-  // Use `gatsby-plugin-intl` Link (which prepends lang path)
   return (
     <InternalLink
       className={isGlossary ? `is-glossary ${className}` : className}

@@ -16,13 +16,6 @@ export const Content = styled.div`
   width: 100%;
 `
 
-export const H2 = styled.h2`
-  ${Mixins.textLevel2}
-  @media (max-width: ${props => props.theme.breakpoints.m}) {
-    font-size: 1.5rem;
-  }
-`
-
 export const CardContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -60,6 +53,46 @@ export const GrayContainer = styled.div`
     ${props => props.theme.colors.tableItemBoxShadow};
 `
 
-export const Section = styled.div`
-  display: block;
+export const Column = styled.div`
+  flex: 1 1 33%;
+  margin-bottom: 1.5rem;
+  margin-right: 2rem;
+  width: 100%;
+`
+
+export const H2 = styled.h2`
+  ${Mixins.textLevel2}
+  @media (max-width: ${props => props.theme.breakpoints.m}) {
+    font-size: 1.5rem;
+  }
+`
+
+export const Input = styled.input`
+  border: 1px solid ${props => props.theme.colors.searchBorder};
+  color: ${props => props.theme.colors.text};
+  background: ${props => props.theme.colors.searchBackground};
+  padding: 0.5rem;
+  padding-right: 2rem;
+  border-radius: 0.25em;
+  width: 100%;
+  transition: all 0.3s;
+
+  &:focus {
+    outline: ${props => props.theme.colors.primary} auto 1px;
+  }
+`
+
+export const TextArea = styled.textarea`
+  border: 1px solid ${props => props.theme.colors.searchBorder};
+  color: ${props => props.theme.colors.text};
+  background: ${props => props.theme.colors.searchBackground};
+  padding: 0.5rem;
+  padding-right: 2rem;
+  border-radius: 0.25em;
+  width: 100%;
+  transition: all 0.3s;
+
+  &:focus {
+    outline: ${props => props.theme.colors.primary} auto 1px;
+  }
 `
