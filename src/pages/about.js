@@ -126,6 +126,7 @@ const AboutPage = () => {
             </SubtitleWithMargin>
             <p>
               <Text id={content.about.description} />
+              <Link to={content.about.resumeLink}> Resume</Link>
             </p>
             <p>
               <Text id={content.about.conclusion} />

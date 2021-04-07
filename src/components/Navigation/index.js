@@ -134,7 +134,7 @@ const Navigation = ({ handleThemeChange, isDarkTheme, path }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   let mobileLinkSections = cloneDeep(links.linkSections)
-  const shouldShowSubNav = path.includes("/developers/")
+  const shouldShowSubNav = path && path.includes("/developers/")
 
   const handleMenuToggle = item => {
     if (item === "menu") {
