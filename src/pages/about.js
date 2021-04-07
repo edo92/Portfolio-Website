@@ -125,17 +125,15 @@ const AboutPage = () => {
               <Text id={content.about.title} />
             </SubtitleWithMargin>
             <p>
-              <Text id="Full Stack Developer with 3+ years of hands-on experiance developing full stack applications using a range of techonlogies and progreamming languages." />
+              <Text id={content.about.description} />
             </p>
             <p>
-              <Text id="Seeking to leverage braod development experifance and hands-on technical expertise in a challenging role as a fullstack developer." />
+              <Text id={content.about.conclusion} />
             </p>
           </IntroColumn>
           <StyledCallout
-            title={"Contact Me"}
-            description={
-              "Please feel free to reach out to me directly in linkedin or fill out contact form and i will reach out to you."
-            }
+            title={content.contact.title}
+            description={content.contact.description}
           >
             <div>
               <ButtonLinkCustom isSecondary={true} to="/about/#contact">
