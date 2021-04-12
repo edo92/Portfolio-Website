@@ -1,7 +1,7 @@
 {
   "linkSections": [
     {
-      "text": "Skills",
+      "text": "skills",
       "ariaLabel": "skills-menu",
       "items": [
         {
@@ -15,6 +15,20 @@
         {
           "text": "mobile",
           "to": "/skills/mobile"
+        }
+      ]
+    },
+    {
+      "text": "projects",
+      "ariaLabel": "projects-menu",
+      "items": [
+        {
+          "text": "snippets",
+          "to": "/projects/snippets"
+        },
+        {
+          "text": "projects",
+          "to": "/projects/projects"
         }
       ]
     },

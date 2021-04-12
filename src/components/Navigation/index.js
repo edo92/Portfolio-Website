@@ -1,6 +1,8 @@
 import React, { useState } from "react"
 import styled from "styled-components"
 import { cloneDeep } from "lodash"
+import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 
 import { NavLink } from "../../components/SharedStyles"
 import NavDropdown from "./NavDropdown"
@@ -8,6 +10,7 @@ import MobileNavMenu from "./Mobile"
 import links from "./links.json"
 import Text from "../Text"
 import Icon from "../Icon"
+import Link from "../Link"
 
 const NavContainer = styled.div`
   position: sticky;
@@ -24,14 +27,6 @@ const StyledNav = styled.nav`
   justify-content: center;
   background-color: ${props => props.theme.colors.background};
   border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* TODO use theme variable */
-`
-
-const Logo = styled.a`
-  padding: 8px;
-  font-size: 32px;
-  border-radius: 2px;
-  padding-right: 12px;
-  padding-left: 12px;
 `
 
 const NavContent = styled.div`
@@ -130,11 +125,37 @@ const SubNav = styled.nav`
   }
 `
 
+const HomeLogoNavLink = styled(Link)`
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+`
+
+const HomeLogo = styled(Img)`
+  height: 38px !important;
+  opacity: 0.9;
+  &:hover {
+    opacity: 1;
+  }
+`
+
 const Navigation = ({ handleThemeChange, isDarkTheme, path }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   let mobileLinkSections = cloneDeep(links.linkSections)
   const shouldShowSubNav = path && path.includes("/developers/")
+
+  const data = useStaticQuery(graphql`
+    query {
+      file(relativePath: { eq: "logo/ej-logo.png" }) {
+        childImageSharp {
+          fixed(width: 25) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+    }
+  `)
 
   const handleMenuToggle = item => {
     if (item === "menu") {
@@ -147,8 +168,10 @@ const Navigation = ({ handleThemeChange, isDarkTheme, path }) => {
   return (
     <NavContainer>
       <StyledNav>
-        <Logo href="/">EJ</Logo>
         <NavContent>
+          <HomeLogoNavLink href="/">
+            <HomeLogo fixed={data.file.childImageSharp.fixed} alt={"logo"} />
+          </HomeLogoNavLink>
           {/* Desktop */}
           <InnerContent>
             <LeftItems>

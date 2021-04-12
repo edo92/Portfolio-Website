@@ -35,6 +35,7 @@ const HeroImg = styled(Img)`
   margin-left: 3rem;
   width: 100%;
   max-width: 624px;
+  padding: 1rem 1rem;
   @media (max-width: ${props => props.theme.breakpoints.l}) {
     margin-top: 0;
     margin-left: 0;
