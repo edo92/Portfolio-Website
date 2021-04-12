@@ -31,16 +31,16 @@
       "title": "projects",
       "links": [
         {
-          "to": "/proj1/",
-          "text": "Project 1"
+          "to": "/projects/apis",
+          "text": "APIs"
         },
         {
-          "to": "/proj2/",
-          "text": "Project 2"
+          "to": "/projects/uiux",
+          "text": "UI UX"
         },
         {
-          "to": "/proj3/",
-          "text": "Project 3"
+          "to": "/projects/Backend",
+          "text": "Backend"
         }
       ]
     },

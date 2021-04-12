@@ -121,5 +121,19 @@ export const query = graphql`
         }
       }
     }
+    wifi: file(relativePath: { eq: "projects/wifi.png" }) {
+      childImageSharp {
+        fixed(width: 900) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    azureCognitive: file(relativePath: { eq: "projects/azure-cognitive.png" }) {
+      childImageSharp {
+        fixed(width: 900) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
   }
 `
