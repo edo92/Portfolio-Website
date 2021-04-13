@@ -257,6 +257,33 @@ const FrontendPage = props => {
           </IntroLeftColumn>
         </IntroRow>
       </Content>
+      <GrayContainer>
+        <Content>
+          <SectionIntro>
+            <H2>Graphic Design</H2>
+            <IntroRow>
+              <IntroLeftColumn>
+                <H2>
+                  <Text id="Illustration for Website" />
+                </H2>
+                <Subtitle>
+                  <Text id="Any mood can be given to a website with graphic illustration" />
+                </Subtitle>
+              </IntroLeftColumn>
+              <ImageContainer>
+                <DesignImage
+                  fluid={
+                    props.isDarkTheme
+                      ? data.uiux1Dark.childImageSharp.fluid
+                      : data.uiux1Dark.childImageSharp.fluid
+                  }
+                  alt={"page-index-get-started-image-alt"}
+                />
+              </ImageContainer>
+            </IntroRow>
+          </SectionIntro>
+        </Content>
+      </GrayContainer>
     </Page>
   )
 }
