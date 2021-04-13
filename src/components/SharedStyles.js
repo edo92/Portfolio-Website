@@ -125,3 +125,9 @@ export const LeftColumn = styled.div`
     margin-right: 0;
   }
 `
+
+export const CardGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 350px), 1fr));
+  gap: 2rem;
+`

@@ -7,17 +7,21 @@ import PageMetadata from "../../components/PageMetadata"
 import ButtonLink from "../../components/ButtonLink"
 import Text from "../../components/Text"
 import Callout from "../../components/Callout"
+import Emoji from "../../components/Emoji"
+import SnippetCard from "../../components/SnippetCard"
+import Pill from "../../components/Pill"
+import { editorChoices } from "../../content/skills/frontend/content"
 
 import {
   Page,
   H2,
-  H3,
   Content,
   JustCenter,
   Divider,
   GrayContainer,
-  CardContainer,
   LeftColumn,
+  CardContainer,
+  CardGrid,
 } from "../../components/SharedStyles"
 
 const Hero = styled(Img)`
@@ -155,6 +159,11 @@ const DesignImage = styled(Img)`
   background: no-repeat 50px;
 `
 
+const StyledCardGrid = styled(CardGrid)`
+  margin-bottom: 4rem;
+  margin-top: 4rem;
+`
+
 const FrontendPage = props => {
   const { data } = props
 
@@ -229,9 +238,9 @@ const FrontendPage = props => {
         </SectionIntro>
         <IntroRow>
           <IntroLeftColumn>
-            <H3>
+            <H2>
               <Text id="Admin Dashboard Template" />
-            </H3>
+            </H2>
             <Subtitle>
               <Text id="Admin dashboard built using React, Redax, Antd libaries" />
             </Subtitle>
@@ -277,54 +286,87 @@ const FrontendPage = props => {
           <ExtraSpaceHalf />
           <SectionIntro>
             <H2>Graphic Design</H2>
-            <IntroRow>
-              <IntroLeftColumn>
-                <H2>
-                  <Text id="Illustration for Website" />
-                </H2>
-                <Subtitle>
-                  <Text id="Any mood can be given to a website with graphic illustration" />
-                </Subtitle>
-              </IntroLeftColumn>
-              <ImageContainer>
-                <DesignImage
-                  fluid={
-                    props.isDarkTheme
-                      ? data.gd_img1.childImageSharp.fluid
-                      : data.gd_img1.childImageSharp.fluid
-                  }
-                  alt={"skills-frontend-graphicdesign"}
-                />
-              </ImageContainer>
-            </IntroRow>
-            <ExtraSpace>
-              <Divider />
-            </ExtraSpace>
-            <IntroRow>
-              <ImageContainer>
-                <DesignImage
-                  fluid={
-                    props.isDarkTheme
-                      ? data.gd_img2.childImageSharp.fluid
-                      : data.gd_img2.childImageSharp.fluid
-                  }
-                  alt={"skills-frontend-graphicdesign"}
-                />
-              </ImageContainer>
-              <IntroLeftColumn>
-                <H2>
-                  <Text id="Character Illustration" />
-                </H2>
-              </IntroLeftColumn>
-            </IntroRow>
           </SectionIntro>
+          <IntroRow>
+            <IntroLeftColumn>
+              <H2>
+                <Text id="Illustration for Website" />
+              </H2>
+              <Subtitle>
+                <Text id="Any mood can be given to a website with graphic illustration" />
+              </Subtitle>
+            </IntroLeftColumn>
+            <ImageContainer>
+              <DesignImage
+                fluid={
+                  props.isDarkTheme
+                    ? data.gd_img1.childImageSharp.fluid
+                    : data.gd_img1.childImageSharp.fluid
+                }
+                alt={"skills-frontend-graphicdesign"}
+              />
+            </ImageContainer>
+          </IntroRow>
+          <ExtraSpace>
+            <Divider />
+          </ExtraSpace>
+          <IntroRow>
+            <ImageContainer>
+              <DesignImage
+                fluid={
+                  props.isDarkTheme
+                    ? data.gd_img2.childImageSharp.fluid
+                    : data.gd_img2.childImageSharp.fluid
+                }
+                alt={"skills-frontend-graphicdesign"}
+              />
+            </ImageContainer>
+            <IntroLeftColumn>
+              <H2>
+                <Text id="Character Illustration" />
+              </H2>
+            </IntroLeftColumn>
+          </IntroRow>
         </Content>
       </GrayContainer>
+      <Content>
+        <SectionIntro>
+          <Divider />
+          <H2>
+            Snippets <Emoji text=":+1:" size={1} />
+          </H2>
+        </SectionIntro>
+        <StyledCardGrid>
+          {editorChoices(data).map((choice, idx) => (
+            <SnippetCard
+              key={idx}
+              background={choice.background}
+              description={choice.description}
+              url={choice.url}
+              alt={choice.alt}
+              image={choice.image}
+              name={choice.name}
+            >
+              <Pill color={choice.pillColor}>{choice.type}</Pill>
+            </SnippetCard>
+          ))}
+        </StyledCardGrid>
+      </Content>
     </Page>
   )
 }
 
 export default FrontendPage
+
+export const oversized = graphql`
+  fragment oversized on File {
+    childImageSharp {
+      fixed(height: 280, quality: 100) {
+        ...GatsbyImageSharpFixed
+      }
+    }
+  }
+`
 
 export const query = graphql`
   query {
@@ -371,6 +413,16 @@ export const query = graphql`
     }
     angular: file(relativePath: { eq: "skills/frontend/angular-icon.png" }) {
       ...calloutImage
+    }
+
+    astrnt: file(relativePath: { eq: "skills/frontend/astrnt.png" }) {
+      ...oversized
+    }
+    uiuxrobot: file(relativePath: { eq: "home/home-hero.png" }) {
+      ...oversized
+    }
+    electree: file(relativePath: { eq: "skills/frontend/electree.png" }) {
+      ...oversized
     }
   }
 `
