@@ -27,15 +27,8 @@ const PageMetadata = ({ description, meta, title, image, canonicalUrl }) => {
             }
           }
         }
-        ogImageBackend: file(relativePath: { eq: "backend/backend-hero.png" }) {
-          childImageSharp {
-            fixed(width: 1200) {
-              src
-            }
-          }
-        }
-        ogImageClient: file(
-          relativePath: { eq: "frontend/frontend-hero.png" }
+        ogImageBackend: file(
+          relativePath: { eq: "skills/backend/backend-hero.png" }
         ) {
           childImageSharp {
             fixed(width: 1200) {
@@ -43,7 +36,18 @@ const PageMetadata = ({ description, meta, title, image, canonicalUrl }) => {
             }
           }
         }
-        ogImageMobile: file(relativePath: { eq: "mobile/mobile-hero.png" }) {
+        ogImageClient: file(
+          relativePath: { eq: "skills/frontend/frontend-hero.png" }
+        ) {
+          childImageSharp {
+            fixed(width: 1200) {
+              src
+            }
+          }
+        }
+        ogImageMobile: file(
+          relativePath: { eq: "skills/mobile/mobile-hero.png" }
+        ) {
           childImageSharp {
             fixed(width: 1200) {
               src

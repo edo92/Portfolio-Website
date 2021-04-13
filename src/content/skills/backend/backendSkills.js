@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import HorizontalCard from "../../components/HorizontalCard"
+import HorizontalCard from "../../../components/HorizontalCard"
 
 const ChecklistItem = styled(HorizontalCard)`
   border: 0px;
@@ -118,7 +118,7 @@ const BackendSkills = () => {
         <ChecklistItem
           key="0"
           emoji=":white_check_mark:"
-          title="CI"
+          title="Continuous Integration"
           description="CircleCI & Jenkins"
         />
 

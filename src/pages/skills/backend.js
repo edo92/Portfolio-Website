@@ -6,8 +6,9 @@ import { graphql } from "gatsby"
 import Text from "../../components/Text"
 import ButtonLink from "../../components/ButtonLink"
 import DataProductCard from "../../components/DataProductCard"
-
+import BackendSkillsContent from "../../content/skills/backend/backendSkills"
 import { skillsList } from "../../content/skills/backend/skillsList"
+
 import { Page, Content, Divider } from "../../components/SharedStyles"
 
 const HeroContainer = styled.div`
@@ -206,6 +207,9 @@ const BackendSkillsPage = ({ data }) => {
           })}
         </StyledCardGrid>
       </Content>
+      <Divider />
+      <BackendSkillsContent />
+      <Divider />
     </Page>
   )
 }

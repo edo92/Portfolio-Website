@@ -151,13 +151,15 @@ export const query = graphql`
         }
       }
     }
-    backendLogo: file(relativePath: { eq: "backend/shuffled.png" }) {
+    backendLogo: file(relativePath: { eq: "skills/backend/shuffled.png" }) {
       ...skillsListImgs
     }
-    frontendLogo: file(relativePath: { eq: "frontend/frontend-hero.png" }) {
+    frontendLogo: file(
+      relativePath: { eq: "skills/frontend/frontend-hero.png" }
+    ) {
       ...skillsListImgs
     }
-    mobileLogo: file(relativePath: { eq: "mobile/mobile-hero.png" }) {
+    mobileLogo: file(relativePath: { eq: "skills/mobile/mobile-hero.png" }) {
       ...skillsListImgs
     }
     projicon: file(relativePath: { eq: "home/projicon.png" }) {
