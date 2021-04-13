@@ -187,23 +187,23 @@ export const skillsChecklist = [
     [
       {
         emoji: ":white_check_mark:",
-        title: "Languages",
-        description: "Python & JavaScript",
+        title: "Cloud Infrastructure",
+        description: "AWS & Azure",
       },
       {
         emoji: ":white_check_mark:",
-        title: "Frameworks",
-        description: "Node.js & Django",
+        title: "Aws Scalable Server",
+        description: "ECS & ECK",
       },
       {
         emoji: ":white_check_mark:",
-        title: "Other Languages",
-        description: "Bash & Go",
+        title: "Azure Scalable Server",
+        description: "Kubernetes & Service Fabric",
       },
       {
         emoji: ":white_check_mark:",
-        title: "Other Frameworks",
-        description: "Flask & Apollo/GraphQL",
+        title: "Serverless",
+        description: "Fargate & Lambda",
       },
     ],
   ],
@@ -211,45 +211,49 @@ export const skillsChecklist = [
     [
       {
         emoji: ":white_check_mark:",
-        title: "Languages",
-        description: "Python & JavaScript",
+        title: "Databases",
+        description: "Relational & No SQL",
       },
+
       {
         emoji: ":white_check_mark:",
-        title: "Frameworks",
-        description: "Node.js & Django",
+        title: "Architecture",
+        description: "ORM & ODM",
       },
+
       {
         emoji: ":white_check_mark:",
-        title: "Other Languages",
-        description: "Bash & Go",
+        title: "In Memory",
+        description: "Radis",
       },
+
       {
         emoji: ":white_check_mark:",
-        title: "Other Frameworks",
-        description: "Flask & Apollo/GraphQL",
+        title: "Other Databases",
+        description: "SQLite & Postgresql",
       },
     ],
     [
       {
         emoji: ":white_check_mark:",
-        title: "Languages",
-        description: "Python & JavaScript",
+        title: "CI / CD",
+        description: "CircleCI & Jenkins",
       },
       {
         emoji: ":white_check_mark:",
-        title: "Frameworks",
-        description: "Node.js & Django",
+        title: "Aws Pipeline",
+        description: "AWS Pipeline, CodeBuild & CodeDeploy",
       },
       {
         emoji: ":white_check_mark:",
-        title: "Other Languages",
-        description: "Bash & Go",
+        title: "Azure Pipeline",
+        description: "Azure DevOps",
       },
+
       {
         emoji: ":white_check_mark:",
-        title: "Other Frameworks",
-        description: "Flask & Apollo/GraphQL",
+        title: "Mobile App CI/CD",
+        description: "Azure AppCenter",
       },
     ],
   ],

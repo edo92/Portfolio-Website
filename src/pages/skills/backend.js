@@ -14,7 +14,7 @@ import {
   skillsList,
   projectList,
   skillsChecklist,
-} from "../../content/skills/backend/skillsList"
+} from "../../content/skills/backend/content"
 
 import {
   Page,
@@ -56,7 +56,7 @@ const Hero = styled(Img)`
   @media (max-width: ${props => props.theme.breakpoints.xl}) {
     max-width: 100vw;
   }
-  min-height: 300px;
+  min-height: 250px;
   max-height: 400px;
   background-size: cover;
 `
