@@ -305,8 +305,8 @@ const FrontendPage = props => {
                 <DesignImage
                   fluid={
                     props.isDarkTheme
-                      ? data.gd_img1.childImageSharp.fluid
-                      : data.gd_img1.childImageSharp.fluid
+                      ? data.gd_img2.childImageSharp.fluid
+                      : data.gd_img2.childImageSharp.fluid
                   }
                   alt={"skills-frontend-graphicdesign"}
                 />
@@ -352,6 +352,13 @@ export const query = graphql`
     }
 
     gd_img1: file(relativePath: { eq: "skills/frontend/gd-img1.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 800) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    gd_img2: file(relativePath: { eq: "skills/frontend/gd-img2.png" }) {
       childImageSharp {
         fluid(maxWidth: 800) {
           ...GatsbyImageSharpFluid
