@@ -7,6 +7,7 @@ import Text from "../../components/Text"
 import ButtonLink from "../../components/ButtonLink"
 import DataProductCard from "../../components/DataProductCard"
 import ActionCard from "../../components/ActionCard"
+import PageMetadata from "../../components/PageMetadata"
 
 import BackendSkillsContent from "../../content/skills/backend/backendSkills"
 import {
@@ -134,13 +135,16 @@ const StyledCard = styled(ActionCard)`
 const BackendSkillsPage = ({ data }) => {
   return (
     <Page>
+      <PageMetadata
+        title={"skills-backend"}
+        description={"backend-skills-showcase"}
+      />
       <HeroContainer>
         <Hero
           fluid={data.hero.childImageSharp.fluid}
           alt={"backend-skills-hero"}
           loading="eager"
         />
-
         <Header>
           <h1>
             <Text id="backend-skills-showcase" />

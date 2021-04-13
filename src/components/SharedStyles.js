@@ -96,3 +96,8 @@ export const TextArea = styled.textarea`
     outline: ${props => props.theme.colors.primary} auto 1px;
   }
 `
+
+export const JustCenter = styled.div`
+  display: flex;
+  justify-content: center;
+`
