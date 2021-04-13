@@ -19,20 +19,6 @@
       ]
     },
     {
-      "text": "projects",
-      "ariaLabel": "projects-menu",
-      "items": [
-        {
-          "text": "snippets",
-          "to": "/projects/snippets"
-        },
-        {
-          "text": "projects",
-          "to": "/projects/projects"
-        }
-      ]
-    },
-    {
       "text": "about",
       "to": "/about/",
       "ariaLabel": "about-page-link"
