@@ -6,10 +6,20 @@ import { graphql } from "gatsby"
 import Text from "../../components/Text"
 import ButtonLink from "../../components/ButtonLink"
 import DataProductCard from "../../components/DataProductCard"
-import BackendSkillsContent from "../../content/skills/backend/backendSkills"
-import { skillsList } from "../../content/skills/backend/skillsList"
+import ActionCard from "../../components/ActionCard"
 
-import { Page, Content, Divider } from "../../components/SharedStyles"
+import BackendSkillsContent from "../../content/skills/backend/backendSkills"
+import {
+  skillsList,
+  projectList,
+} from "../../content/skills/backend/skillsList"
+
+import {
+  Page,
+  Content,
+  Divider,
+  CardContainer,
+} from "../../components/SharedStyles"
 
 const HeroContainer = styled.div`
   position: relative;
@@ -94,6 +104,33 @@ const StyledCardGridR3 = styled(CardGridR3)`
   margin-bottom: 4rem;
 `
 
+const StyledCardContainer = styled(CardContainer)`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0rem;
+  @media (max-width: ${props => props.theme.breakpoints.l}) {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: 1fr;
+  }
+`
+
+const StyledCard = styled(ActionCard)`
+  min-width: 480px;
+  margin: 1rem;
+  border-radius: 2px;
+  border: 1px solid ${props => props.theme.colors.text};
+  background: ${props => props.theme.colors.background};
+  box-shadow: ${props => props.theme.colors.cardBoxShadow};
+  @media (max-width: ${props => props.theme.breakpoints.l}) {
+    margin: 0;
+    min-width: min(100%, 240px);
+  }
+`
+
 const BackendSkillsPage = ({ data }) => {
   return (
     <Page>
@@ -103,6 +140,7 @@ const BackendSkillsPage = ({ data }) => {
           alt={"backend-skills-hero"}
           loading="eager"
         />
+
         <Header>
           <h1>
             <Text id="backend-skills-showcase" />
@@ -124,6 +162,7 @@ const BackendSkillsPage = ({ data }) => {
           </ButtonLink>
         </Header>
       </HeroContainer>
+
       <Content>
         <Divider />
         <Title>Languages {"&"} Frameworks</Title>
@@ -207,9 +246,26 @@ const BackendSkillsPage = ({ data }) => {
           })}
         </StyledCardGrid>
       </Content>
+
       <Divider />
       <BackendSkillsContent />
       <Divider />
+
+      <Content>
+        <h1>Snippets</h1>
+        <StyledCardContainer>
+          {projectList.snippets(data).map((card, idx) => (
+            <StyledCard
+              key={idx}
+              title={card.title}
+              description={card.description}
+              to={card.to}
+              image={card.image}
+              alt={card.alt}
+            />
+          ))}
+        </StyledCardContainer>
+      </Content>
     </Page>
   )
 }
@@ -337,6 +393,25 @@ export const query = graphql`
     jenkinslogo: file(relativePath: { eq: "skills/backend/jenkinslogo.png" }) {
       childImageSharp {
         fixed(width: 200) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+
+    awsarchitecture: file(
+      relativePath: { eq: "skills/backend/aws-arch-schema.png" }
+    ) {
+      childImageSharp {
+        fixed(width: 900) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    nodearchitecture: file(
+      relativePath: { eq: "skills/backend/nodearch.png" }
+    ) {
+      childImageSharp {
+        fixed(width: 900) {
           ...GatsbyImageSharpFixed
         }
       }
