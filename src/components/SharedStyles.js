@@ -67,6 +67,20 @@ export const H2 = styled.h2`
   }
 `
 
+export const H3 = styled.h2`
+  ${Mixins.textLevel3}
+  @media (max-width: ${props => props.theme.breakpoints.m}) {
+    font-size: 1.5rem;
+  }
+`
+
+export const H4 = styled.h2`
+  ${Mixins.textLevel4}
+  @media (max-width: ${props => props.theme.breakpoints.m}) {
+    font-size: 1.5rem;
+  }
+`
+
 export const Input = styled.input`
   border: 1px solid ${props => props.theme.colors.searchBorder};
   color: ${props => props.theme.colors.text};

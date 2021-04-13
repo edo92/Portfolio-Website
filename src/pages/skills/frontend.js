@@ -11,6 +11,7 @@ import Callout from "../../components/Callout"
 import {
   Page,
   H2,
+  H3,
   Content,
   JustCenter,
   Divider,
@@ -132,8 +133,20 @@ const ImageContainer = styled.div`
 `
 
 const ExtraSpace = styled.div`
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding: 5rem 0 5rem 0;
+  @media (max-width: 1400px) {
+    padding: 1rem 0 1rem 0;
+  }
+  @media (max-width: 1200px) {
+    padding: 0rem 0 0rem 0;
+  }
+  @media (max-width: 900px) {
+    display: none;
+  }
+`
+
+const ExtraSpaceHalf = styled.div`
+  padding: 2.5rem 0 2.5rem 0;
 `
 
 const DesignImage = styled(Img)`
@@ -210,14 +223,15 @@ const FrontendPage = props => {
       </StyledGrayContainer>
 
       <Content>
+        <ExtraSpaceHalf />
         <SectionIntro>
           <H2>Design and Develop UI UX</H2>
         </SectionIntro>
         <IntroRow>
           <IntroLeftColumn>
-            <H2>
-              <Text id="Admin Dashboard Website Template" />
-            </H2>
+            <H3>
+              <Text id="Admin Dashboard Template" />
+            </H3>
             <Subtitle>
               <Text id="Admin dashboard built using React, Redax, Antd libaries" />
             </Subtitle>
@@ -241,10 +255,10 @@ const FrontendPage = props => {
             <IntroImage
               fluid={
                 props.isDarkTheme
-                  ? data.uiux1Dark.childImageSharp.fluid
-                  : data.uiux1Dark.childImageSharp.fluid
+                  ? data.uiux2Dark.childImageSharp.fluid
+                  : data.uiux2Dark.childImageSharp.fluid
               }
-              alt={"page-index-get-started-image-alt"}
+              alt={"skills-frontend-uiux"}
             />
           </ImageContainer>
           <IntroLeftColumn>
@@ -256,9 +270,11 @@ const FrontendPage = props => {
             </Subtitle>
           </IntroLeftColumn>
         </IntroRow>
+        <ExtraSpaceHalf />
       </Content>
       <GrayContainer>
         <Content>
+          <ExtraSpaceHalf />
           <SectionIntro>
             <H2>Graphic Design</H2>
             <IntroRow>
@@ -274,12 +290,32 @@ const FrontendPage = props => {
                 <DesignImage
                   fluid={
                     props.isDarkTheme
-                      ? data.uiux1Dark.childImageSharp.fluid
-                      : data.uiux1Dark.childImageSharp.fluid
+                      ? data.gd_img1.childImageSharp.fluid
+                      : data.gd_img1.childImageSharp.fluid
                   }
-                  alt={"page-index-get-started-image-alt"}
+                  alt={"skills-frontend-graphicdesign"}
                 />
               </ImageContainer>
+            </IntroRow>
+            <ExtraSpace>
+              <Divider />
+            </ExtraSpace>
+            <IntroRow>
+              <ImageContainer>
+                <DesignImage
+                  fluid={
+                    props.isDarkTheme
+                      ? data.gd_img1.childImageSharp.fluid
+                      : data.gd_img1.childImageSharp.fluid
+                  }
+                  alt={"skills-frontend-graphicdesign"}
+                />
+              </ImageContainer>
+              <IntroLeftColumn>
+                <H2>
+                  <Text id="Character Illustration" />
+                </H2>
+              </IntroLeftColumn>
             </IntroRow>
           </SectionIntro>
         </Content>
@@ -299,9 +335,25 @@ export const query = graphql`
         }
       }
     }
+
     uiux1Dark: file(relativePath: { eq: "skills/frontend/uiux-image1.png" }) {
       childImageSharp {
         fluid(maxWidth: 1440) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    uiux2Dark: file(relativePath: { eq: "skills/frontend/uiux-image2.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1440) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+
+    gd_img1: file(relativePath: { eq: "skills/frontend/gd-img1.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 800) {
           ...GatsbyImageSharpFluid
         }
       }

@@ -149,7 +149,7 @@ const Navigation = ({ handleThemeChange, isDarkTheme, path }) => {
     query {
       file(relativePath: { eq: "logo/ej-logo.png" }) {
         childImageSharp {
-          fixed(width: 25) {
+          fixed(width: 33) {
             ...GatsbyImageSharpFixed
           }
         }
