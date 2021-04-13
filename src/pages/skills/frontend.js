@@ -329,9 +329,10 @@ const FrontendPage = props => {
           </IntroRow>
         </Content>
       </GrayContainer>
+      <ExtraSpaceHalf />
+      <Divider />
       <Content>
         <SectionIntro>
-          <Divider />
           <H2>
             Snippets <Emoji text=":+1:" size={1} />
           </H2>
