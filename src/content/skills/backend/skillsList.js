@@ -100,4 +100,41 @@ export const skillsList = {
       },
     ]
   },
+
+  cicd(data) {
+    return [
+      {
+        background: "#ffff",
+        url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+        alt: "AwsCodeBuild-logo",
+        image: data.awscodebuildlogo.childImageSharp.fixed,
+        name: "AwsCodeBuild",
+        description: `Experianced in Node.js/JavaScirpt and Python/Django`,
+      },
+      {
+        background: "#ffff",
+        url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+        alt: "AzureDevOps-logo",
+        image: data.azuredevopslogo.childImageSharp.fixed,
+        name: "AzureDevOps",
+        description: `Experianced in Node.js/JavaScirpt and Python/Django`,
+      },
+      {
+        background: "#ffff",
+        url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+        alt: "Circleci-logo",
+        image: data.circlecilogo.childImageSharp.fixed,
+        name: "Circleci",
+        description: `Experianced in Node.js/JavaScirpt and Python/Django`,
+      },
+      {
+        background: "#ffff",
+        url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+        alt: "Jenkins-logo",
+        image: data.jenkinslogo.childImageSharp.fixed,
+        name: "Jenkins",
+        description: `Experianced in Node.js/JavaScirpt and Python/Django`,
+      },
+    ]
+  },
 }

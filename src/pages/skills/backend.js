@@ -185,6 +185,27 @@ const BackendSkillsPage = ({ data }) => {
           })}
         </StyledCardGrid>
       </Content>
+
+      <Content>
+        <Divider />
+        <Title>CI CD & Pipeline</Title>
+        <StyledCardGrid>
+          {skillsList.cicd(data).map((dapp, idx) => {
+            return (
+              <DataProductCard
+                key={idx}
+                background={dapp.background}
+                url={dapp.url}
+                alt={dapp.alt}
+                image={dapp.image}
+                name={dapp.name}
+                data={dapp.data}
+                description={dapp.description}
+              />
+            )
+          })}
+        </StyledCardGrid>
+      </Content>
     </Page>
   )
 }
@@ -275,6 +296,41 @@ export const query = graphql`
     marinadblogo: file(
       relativePath: { eq: "skills/backend/marinadblogo.png" }
     ) {
+      childImageSharp {
+        fixed(width: 200) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+
+    awscodebuildlogo: file(
+      relativePath: { eq: "skills/backend/awscodebuildlogo.png" }
+    ) {
+      childImageSharp {
+        fixed(width: 210) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    azuredevopslogo: file(
+      relativePath: { eq: "skills/backend/azuredevopslogo.png" }
+    ) {
+      childImageSharp {
+        fixed(width: 200) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    circlecilogo: file(
+      relativePath: { eq: "skills/backend/circlecilogo.png" }
+    ) {
+      childImageSharp {
+        fixed(width: 200) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    jenkinslogo: file(relativePath: { eq: "skills/backend/jenkinslogo.png" }) {
       childImageSharp {
         fixed(width: 200) {
           ...GatsbyImageSharpFixed
