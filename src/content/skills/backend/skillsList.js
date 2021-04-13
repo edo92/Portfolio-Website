@@ -36,4 +36,32 @@ export const skillsList = {
       },
     ]
   },
+  cloud(data) {
+    return [
+      {
+        background: "#f9971c",
+        url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+        alt: "Aws-logo",
+        image: data.awslogo.childImageSharp.fixed,
+        name: "AWS",
+        description: `Experianced with aws pipline, hosting, and other services`,
+      },
+      {
+        background: "rgb(33, 47, 70)",
+        url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+        alt: "Azure-logo",
+        image: data.azurelogo.childImageSharp.fixed,
+        name: "Azure",
+        description: `Experianced with Azure container services and databases`,
+      },
+      {
+        background: "rgb(255, 255, 255)",
+        url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+        alt: "GCP-logo",
+        image: data.gcplogo.childImageSharp.fixed,
+        name: "Google Cloud Platform",
+        description: `Experianced with GCP cloud functions and compute engine`,
+      },
+    ]
+  },
 }

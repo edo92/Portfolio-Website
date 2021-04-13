@@ -79,7 +79,17 @@ const CardGrid = styled.div`
   gap: 2rem;
 `
 
+const CardGridR3 = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
+  gap: 2rem;
+`
+
 const StyledCardGrid = styled(CardGrid)`
+  margin-bottom: 4rem;
+`
+
+const StyledCardGridR3 = styled(CardGridR3)`
   margin-bottom: 4rem;
 `
 
@@ -133,6 +143,27 @@ const BackendSkillsPage = ({ data }) => {
           })}
         </StyledCardGrid>
       </Content>
+
+      <Content>
+        <Divider />
+        <Title>Cloud Infrastructure</Title>
+        <StyledCardGridR3>
+          {skillsList.cloud(data).map((dapp, idx) => {
+            return (
+              <DataProductCard
+                key={idx}
+                background={dapp.background}
+                url={dapp.url}
+                alt={dapp.alt}
+                image={dapp.image}
+                name={dapp.name}
+                data={dapp.data}
+                description={dapp.description}
+              />
+            )
+          })}
+        </StyledCardGridR3>
+      </Content>
     </Page>
   )
 }
@@ -172,6 +203,28 @@ export const query = graphql`
     djangologo: file(relativePath: { eq: "skills/backend/djangologo.png" }) {
       childImageSharp {
         fixed(width: 160) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+
+    awslogo: file(relativePath: { eq: "skills/backend/awslogo.png" }) {
+      childImageSharp {
+        fixed(width: 200) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    azurelogo: file(relativePath: { eq: "skills/backend/azurelogo.png" }) {
+      childImageSharp {
+        fixed(width: 200) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    gcplogo: file(relativePath: { eq: "skills/backend/gcplogo.png" }) {
+      childImageSharp {
+        fixed(width: 210) {
           ...GatsbyImageSharpFixed
         }
       }
