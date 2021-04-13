@@ -140,6 +140,7 @@ const StyledCard = styled(ActionCard)`
 
 const ChecklistContainer = styled.div`
   display: flex;
+  margin-bottom: 3rem;
 `
 
 const TwoColumnContent = styled.div`
@@ -316,15 +317,12 @@ const BackendSkillsPage = ({ data }) => {
             ))}
           </ChecklistContainer>
         </Content>
-        <ExtraSpaceHalf />
       </GrayContainer>
-
+      <ExtraSpaceHalf />
       <Content>
-        <ExtraSpaceHalf>
-          <SectionIntro>
-            <H2>Snippets</H2>
-          </SectionIntro>
-        </ExtraSpaceHalf>
+        <SectionIntro>
+          <H2>Snippets</H2>
+        </SectionIntro>
         <StyledCardContainer>
           {projectList.snippets(data).map((card, idx) => (
             <StyledCard

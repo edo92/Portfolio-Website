@@ -32,7 +32,8 @@ const ActionCardContainer = styled(CardContainer)`
 `
 
 const FeaturesContainer = styled.div`
-  padding-top: 2rem;
+  padding: 1rem 2rem;
+  margin: 3rem 0;
 `
 
 const CalloutCardContainer = styled(CardContainer)`
@@ -76,12 +77,10 @@ const HomePage = ({ data }) => {
       <Divider />
       <Content>
         <GrayContainer>
-          <Content>
-            <FeaturesContainer>
-              <Features gridItems={content.features.row1} />
-              <Features gridItems={content.features.row2} />
-            </FeaturesContainer>
-          </Content>
+          <FeaturesContainer>
+            <Features gridItems={content.features.row1} />
+            <Features gridItems={content.features.row2} />
+          </FeaturesContainer>
         </GrayContainer>
       </Content>
       <Divider />
