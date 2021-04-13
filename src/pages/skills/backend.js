@@ -164,6 +164,27 @@ const BackendSkillsPage = ({ data }) => {
           })}
         </StyledCardGridR3>
       </Content>
+
+      <Content>
+        <Divider />
+        <Title>Databases</Title>
+        <StyledCardGrid>
+          {skillsList.databases(data).map((dapp, idx) => {
+            return (
+              <DataProductCard
+                key={idx}
+                background={dapp.background}
+                url={dapp.url}
+                alt={dapp.alt}
+                image={dapp.image}
+                name={dapp.name}
+                data={dapp.data}
+                description={dapp.description}
+              />
+            )
+          })}
+        </StyledCardGrid>
+      </Content>
     </Page>
   )
 }
@@ -225,6 +246,37 @@ export const query = graphql`
     gcplogo: file(relativePath: { eq: "skills/backend/gcplogo.png" }) {
       childImageSharp {
         fixed(width: 210) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+
+    mongologo: file(relativePath: { eq: "skills/backend/mongologo.png" }) {
+      childImageSharp {
+        fixed(width: 200) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    redislogo: file(relativePath: { eq: "skills/backend/redislogo.png" }) {
+      childImageSharp {
+        fixed(width: 110) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    mysqllogo: file(relativePath: { eq: "skills/backend/mysqllogo.png" }) {
+      childImageSharp {
+        fixed(width: 200) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    marinadblogo: file(
+      relativePath: { eq: "skills/backend/marinadblogo.png" }
+    ) {
+      childImageSharp {
+        fixed(width: 200) {
           ...GatsbyImageSharpFixed
         }
       }

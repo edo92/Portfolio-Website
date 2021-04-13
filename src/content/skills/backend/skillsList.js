@@ -64,4 +64,40 @@ export const skillsList = {
       },
     ]
   },
+  databases(data) {
+    return [
+      {
+        background: "#ffff",
+        url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+        alt: "mongodb-logo",
+        image: data.mongologo.childImageSharp.fixed,
+        name: "MongoDB",
+        description: `Experianced in building complex noSQL queries`,
+      },
+      {
+        background: "#ffff",
+        url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+        alt: "Redis-logo",
+        image: data.redislogo.childImageSharp.fixed,
+        name: "Redis",
+        description: `Worked with in memory chaching with redis database`,
+      },
+      {
+        background: "#ffff",
+        url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+        alt: "Redis-logo",
+        image: data.mysqllogo.childImageSharp.fixed,
+        name: "MySQL",
+        description: `Experianced with sequel databases, writing complex queries such as MySQL`,
+      },
+      {
+        background: "#ffff",
+        url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+        alt: "MarinaDB-logo",
+        image: data.marinadblogo.childImageSharp.fixed,
+        name: "MarinaDB",
+        description: `Experianced with sequel databases, writing complex queries such as MarinaDB`,
+      },
+    ]
+  },
 }
