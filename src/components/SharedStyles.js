@@ -147,9 +147,15 @@ export const ExtraSpace = styled.div`
 
 export const ExtraSpaceHalf = styled.div`
   padding: 2.5rem 0 2.5rem 0;
+  @media (max-width: 1200px) {
+    padding: 1.5rem 0 1.5rem 0;
+  }
+  @media (max-width: 900px) {
+    display: none;
+  }
 `
 
-export const ExtraSpaceCenter = styled(ExtraSpace)`
+export const ExtraSpaceCenter = styled(ExtraSpaceHalf)`
   display: flex;
   justify-content: center;
 `

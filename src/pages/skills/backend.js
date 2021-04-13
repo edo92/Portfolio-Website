@@ -20,10 +20,12 @@ import {
   Page,
   Content,
   Divider,
+  H2,
   CardContainer,
   GrayContainer,
   ExtraSpace,
   ExtraSpaceCenter,
+  ExtraSpaceHalf,
 } from "../../components/SharedStyles"
 
 const HeroContainer = styled.div`
@@ -70,6 +72,10 @@ const Header = styled.header`
   }
 `
 
+const SectionIntro = styled.div`
+  margin-bottom: 3rem;
+`
+
 const Subtitle = styled.div`
   font-size: 20px;
   line-height: 140%;
@@ -83,10 +89,6 @@ const SubtitleTwo = styled.div`
   margin-bottom: 2rem;
   text-align: center;
   color: ${props => props.theme.colors.text300};
-`
-
-const Title = styled.h1`
-  padding-bottom: 2rem;
 `
 
 const CardGrid = styled.div`
@@ -138,7 +140,6 @@ const StyledCard = styled(ActionCard)`
 
 const ChecklistContainer = styled.div`
   display: flex;
-  margin-bottom: 1.5rem;
 `
 
 const TwoColumnContent = styled.div`
@@ -200,7 +201,9 @@ const BackendSkillsPage = ({ data }) => {
 
       <Content>
         <Divider />
-        <Title>Languages {"&"} Frameworks</Title>
+        <SectionIntro>
+          <H2>Languages {"&"} Frameworks</H2>
+        </SectionIntro>
         <StyledCardGrid>
           {skillsList.languages(data).map((dapp, idx) => {
             return (
@@ -221,7 +224,9 @@ const BackendSkillsPage = ({ data }) => {
 
       <Content>
         <Divider />
-        <Title>Cloud Infrastructure</Title>
+        <SectionIntro>
+          <H2>Cloud Infrastructure</H2>
+        </SectionIntro>
         <StyledCardGridR3>
           {skillsList.cloud(data).map((dapp, idx) => {
             return (
@@ -242,7 +247,9 @@ const BackendSkillsPage = ({ data }) => {
 
       <Content>
         <Divider />
-        <Title>Databases</Title>
+        <SectionIntro>
+          <H2>Databases</H2>
+        </SectionIntro>
         <StyledCardGrid>
           {skillsList.databases(data).map((dapp, idx) => {
             return (
@@ -263,7 +270,9 @@ const BackendSkillsPage = ({ data }) => {
 
       <Content>
         <Divider />
-        <Title>CI CD & Pipeline</Title>
+        <SectionIntro>
+          <H2>CI CD {"&"} Pipeline</H2>
+        </SectionIntro>
         <StyledCardGrid>
           {skillsList.cicd(data).map((dapp, idx) => {
             return (
@@ -307,11 +316,15 @@ const BackendSkillsPage = ({ data }) => {
             ))}
           </ChecklistContainer>
         </Content>
+        <ExtraSpaceHalf />
       </GrayContainer>
 
       <Content>
-        <Divider />
-        <h1>Snippets</h1>
+        <ExtraSpaceHalf>
+          <SectionIntro>
+            <H2>Snippets</H2>
+          </SectionIntro>
+        </ExtraSpaceHalf>
         <StyledCardContainer>
           {projectList.snippets(data).map((card, idx) => (
             <StyledCard
@@ -324,6 +337,7 @@ const BackendSkillsPage = ({ data }) => {
             />
           ))}
         </StyledCardContainer>
+        <ExtraSpaceHalf />
       </Content>
     </Page>
   )
