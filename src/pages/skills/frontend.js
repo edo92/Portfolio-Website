@@ -16,6 +16,7 @@ import {
   Divider,
   GrayContainer,
   CardContainer,
+  LeftColumn,
 } from "../../components/SharedStyles"
 
 const Hero = styled(Img)`
@@ -73,19 +74,77 @@ const StyledCallout = styled(Callout)`
   min-height: 100%;
 `
 
-// const StyledContent = styled(Content)`
-//   @media (max-width: ${props => props.theme.breakpoints.l}) {
-//     padding: 1rem;
-//   }
-// `
-
 const SectionIntro = styled.div`
   display: flex;
   flex-direction: column;
   margin: 1rem 0 1rem 0;
 `
 
-const FrontendPage = ({ data }) => {
+const IntroRow = styled.div`
+  padding-top: 1.1rem;
+  padding-bottom: 1.1rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 3rem;
+  margin-top: 1rem;
+  @media (max-width: ${props => props.theme.breakpoints.m}) {
+    flex-direction: column-reverse;
+    margin: 0rem;
+  }
+`
+
+const IntroLeftColumn = styled(LeftColumn)`
+  padding: 6rem;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  @media (max-width: ${props => props.theme.breakpoints.l}) {
+    padding: 2rem;
+  }
+  @media (max-width: ${props => props.theme.breakpoints.s}) {
+    padding: 0rem;
+  }
+`
+
+const Subtitle = styled.div`
+  margin-bottom: 2rem;
+  font-size: 20px;
+  line-height: 140%;
+  @media (max-width: ${props => props.theme.breakpoints.s}) {
+    font-size: 16px;
+  }
+`
+
+const IntroImage = styled(Img)`
+  width: 100%;
+  background-size: cover;
+  background: no-repeat 50px;
+`
+
+const ImageContainer = styled.div`
+  background: "#F1FFFD";
+  display: flex;
+  height: 100%;
+  width: 100%;
+  @media (max-width: ${props => props.theme.breakpoints.l}) {
+    width: 75%;
+  }
+`
+
+const ExtraSpace = styled.div`
+  padding-top: 5px;
+  padding-bottom: 5px;
+`
+
+const DesignImage = styled(Img)`
+  width: 70%;
+  background-size: cover;
+  background: no-repeat 50px;
+`
+
+const FrontendPage = props => {
+  const { data } = props
+
   return (
     <Page>
       <PageMetadata
@@ -148,13 +207,56 @@ const FrontendPage = ({ data }) => {
             </StyledCallout>
           </CalloutCardContainer>
         </Content>
-
-        <Content>
-          <SectionIntro>
-            <H2>Design and Develop UI UX</H2>
-          </SectionIntro>
-        </Content>
       </StyledGrayContainer>
+
+      <Content>
+        <SectionIntro>
+          <H2>Design and Develop UI UX</H2>
+        </SectionIntro>
+        <IntroRow>
+          <IntroLeftColumn>
+            <H2>
+              <Text id="Admin Dashboard Website Template" />
+            </H2>
+            <Subtitle>
+              <Text id="Admin dashboard built using React, Redax, Antd libaries" />
+            </Subtitle>
+          </IntroLeftColumn>
+          <ImageContainer>
+            <IntroImage
+              fluid={
+                props.isDarkTheme
+                  ? data.uiux1Dark.childImageSharp.fluid
+                  : data.uiux1Dark.childImageSharp.fluid
+              }
+              alt={"skills-frontend-uiux"}
+            />
+          </ImageContainer>
+        </IntroRow>
+        <ExtraSpace>
+          <Divider />
+        </ExtraSpace>
+        <IntroRow>
+          <ImageContainer>
+            <IntroImage
+              fluid={
+                props.isDarkTheme
+                  ? data.uiux1Dark.childImageSharp.fluid
+                  : data.uiux1Dark.childImageSharp.fluid
+              }
+              alt={"page-index-get-started-image-alt"}
+            />
+          </ImageContainer>
+          <IntroLeftColumn>
+            <H2>
+              <Text id="Simple and Cool Web Template" />
+            </H2>
+            <Subtitle>
+              <Text id="Cool Web template using React and Nextjs for ssr" />
+            </Subtitle>
+          </IntroLeftColumn>
+        </IntroRow>
+      </Content>
     </Page>
   )
 }
@@ -166,6 +268,13 @@ export const query = graphql`
     hero: file(relativePath: { eq: "skills/frontend/frontend-hero.png" }) {
       childImageSharp {
         fluid(maxWidth: 1445) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    uiux1Dark: file(relativePath: { eq: "skills/frontend/uiux-image1.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1440) {
           ...GatsbyImageSharpFluid
         }
       }

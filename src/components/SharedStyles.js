@@ -101,3 +101,13 @@ export const JustCenter = styled.div`
   display: flex;
   justify-content: center;
 `
+
+export const LeftColumn = styled.div`
+  flex: 0 0 50%;
+  max-width: 75%;
+  margin-right: 4rem;
+  @media (max-width: ${props => props.theme.breakpoints.l}) {
+    max-width: 100%;
+    margin-right: 0;
+  }
+`
