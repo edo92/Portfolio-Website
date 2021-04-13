@@ -136,7 +136,7 @@ const BackendSkillsPage = ({ data }) => {
   return (
     <Page>
       <PageMetadata
-        title={"skills-backend"}
+        title={"Skills Backend"}
         description={"backend-skills-showcase"}
       />
       <HeroContainer>

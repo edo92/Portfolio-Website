@@ -10,6 +10,7 @@ import Callout from "../../components/Callout"
 
 import {
   Page,
+  H2,
   Content,
   JustCenter,
   Divider,
@@ -19,8 +20,8 @@ import {
 
 const Hero = styled(Img)`
   width: 100%;
-  min-height: 380px;
-  max-height: 440px;
+  min-height: 540px;
+  max-height: 550px;
   background-size: cover;
   background: no-repeat 50px;
   margin-bottom: 2rem;
@@ -63,11 +64,6 @@ const StyledGrayContainer = styled(GrayContainer)`
   padding-top: 0.5rem;
 `
 
-const Title = styled.h1`
-  padding-top: 1rem;
-  padding-bottom: 5rem;
-`
-
 const CalloutCardContainer = styled(CardContainer)`
   margin-top: 4rem;
 `
@@ -77,11 +73,23 @@ const StyledCallout = styled(Callout)`
   min-height: 100%;
 `
 
+// const StyledContent = styled(Content)`
+//   @media (max-width: ${props => props.theme.breakpoints.l}) {
+//     padding: 1rem;
+//   }
+// `
+
+const SectionIntro = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0 1rem 0;
+`
+
 const FrontendPage = ({ data }) => {
   return (
     <Page>
       <PageMetadata
-        title={"skills-frontend"}
+        title={"Skills Frontend"}
         description={"frontend-skills-showcase"}
       />
       <Hero
@@ -96,17 +104,19 @@ const FrontendPage = ({ data }) => {
         <Description>
           <Text id="Experianced building front end applications using React & Angular" />
         </Description>
-        <ButtonLink isSecondary to="/what-is-tech-hub/">
+        <ButtonLink isSecondary to="/skills/frontend/#frontend-skill-frontend">
           <Text id="Learn More" />
         </ButtonLink>
       </Header>
 
       <StyledGrayContainer>
-        <Content>
+        <Content id="frontend-skill-frontend">
           <JustCenter>
             <Divider />
           </JustCenter>
-          <Title>Frameworks</Title>
+          <SectionIntro>
+            <H2>Frameworks</H2>
+          </SectionIntro>
           <CalloutCardContainer>
             <StyledCallout
               image={data.react.childImageSharp.fixed}
@@ -137,6 +147,12 @@ const FrontendPage = ({ data }) => {
               </div>
             </StyledCallout>
           </CalloutCardContainer>
+        </Content>
+
+        <Content>
+          <SectionIntro>
+            <H2>Design and Develop UI UX</H2>
+          </SectionIntro>
         </Content>
       </StyledGrayContainer>
     </Page>
