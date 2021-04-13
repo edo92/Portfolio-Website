@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import HorizontalCard from "../../../components/HorizontalCard"
+import { Content } from "../../../components/SharedStyles"
 
 const ChecklistItem = styled(HorizontalCard)`
   border: 0px;
@@ -9,15 +10,11 @@ const ChecklistItem = styled(HorizontalCard)`
   margin-bottom: 1rem;
 `
 
-export const Content = styled.div`
-  padding: 3rem !important;
-  width: 100%;
-`
-
 export const TwoColumnContent = styled(Content)`
   display: flex;
   justify-content: space-between;
-  padding: 2rem;
+  margin-bottom: 3rem;
+  padding: 0 2.5rem 2.5rem 2.5rem;
   @media (max-width: ${props => props.theme.breakpoints.l}) {
     flex-direction: column;
   }

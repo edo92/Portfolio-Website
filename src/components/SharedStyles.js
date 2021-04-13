@@ -131,3 +131,25 @@ export const CardGrid = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 350px), 1fr));
   gap: 2rem;
 `
+
+export const ExtraSpace = styled.div`
+  padding: 5rem 0 5rem 0;
+  @media (max-width: 1400px) {
+    padding: 1rem 0 1rem 0;
+  }
+  @media (max-width: 1200px) {
+    padding: 0rem 0 0rem 0;
+  }
+  @media (max-width: 900px) {
+    display: none;
+  }
+`
+
+export const ExtraSpaceHalf = styled.div`
+  padding: 2.5rem 0 2.5rem 0;
+`
+
+export const ExtraSpaceCenter = styled(ExtraSpace)`
+  display: flex;
+  justify-content: center;
+`

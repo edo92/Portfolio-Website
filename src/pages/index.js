@@ -109,7 +109,7 @@ const HomePage = ({ data }) => {
             description={"Check out my projects on GitHub"}
           >
             <div>
-              <ButtonLink to="https://github.com/edo92/edo92">
+              <ButtonLink to="https://github.com/edo92">
                 <Text id="gitHub-projects" />
               </ButtonLink>
             </div>

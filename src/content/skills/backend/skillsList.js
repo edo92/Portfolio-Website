@@ -159,3 +159,98 @@ export const projectList = {
     ]
   },
 }
+
+export const skillsChecklist = [
+  [
+    [
+      {
+        emoji: ":white_check_mark:",
+        title: "Languages",
+        description: "Python & JavaScript",
+      },
+      {
+        emoji: ":white_check_mark:",
+        title: "Frameworks",
+        description: "Node.js & Django",
+      },
+      {
+        emoji: ":white_check_mark:",
+        title: "Other Languages",
+        description: "Bash & Go",
+      },
+      {
+        emoji: ":white_check_mark:",
+        title: "Other Frameworks",
+        description: "Flask & Apollo/GraphQL",
+      },
+    ],
+    [
+      {
+        emoji: ":white_check_mark:",
+        title: "Languages",
+        description: "Python & JavaScript",
+      },
+      {
+        emoji: ":white_check_mark:",
+        title: "Frameworks",
+        description: "Node.js & Django",
+      },
+      {
+        emoji: ":white_check_mark:",
+        title: "Other Languages",
+        description: "Bash & Go",
+      },
+      {
+        emoji: ":white_check_mark:",
+        title: "Other Frameworks",
+        description: "Flask & Apollo/GraphQL",
+      },
+    ],
+  ],
+  [
+    [
+      {
+        emoji: ":white_check_mark:",
+        title: "Languages",
+        description: "Python & JavaScript",
+      },
+      {
+        emoji: ":white_check_mark:",
+        title: "Frameworks",
+        description: "Node.js & Django",
+      },
+      {
+        emoji: ":white_check_mark:",
+        title: "Other Languages",
+        description: "Bash & Go",
+      },
+      {
+        emoji: ":white_check_mark:",
+        title: "Other Frameworks",
+        description: "Flask & Apollo/GraphQL",
+      },
+    ],
+    [
+      {
+        emoji: ":white_check_mark:",
+        title: "Languages",
+        description: "Python & JavaScript",
+      },
+      {
+        emoji: ":white_check_mark:",
+        title: "Frameworks",
+        description: "Node.js & Django",
+      },
+      {
+        emoji: ":white_check_mark:",
+        title: "Other Languages",
+        description: "Bash & Go",
+      },
+      {
+        emoji: ":white_check_mark:",
+        title: "Other Frameworks",
+        description: "Flask & Apollo/GraphQL",
+      },
+    ],
+  ],
+]

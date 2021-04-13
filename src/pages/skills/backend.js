@@ -3,16 +3,17 @@ import styled from "styled-components"
 import Img from "gatsby-image"
 import { graphql } from "gatsby"
 
-import Text from "../../components/Text"
-import ButtonLink from "../../components/ButtonLink"
-import DataProductCard from "../../components/DataProductCard"
-import ActionCard from "../../components/ActionCard"
 import PageMetadata from "../../components/PageMetadata"
+import DataProductCard from "../../components/DataProductCard"
+import ButtonLink from "../../components/ButtonLink"
+import ActionCard from "../../components/ActionCard"
+import HorizontalCard from "../../components/HorizontalCard"
+import Text from "../../components/Text"
 
-import BackendSkillsContent from "../../content/skills/backend/backendSkills"
 import {
   skillsList,
   projectList,
+  skillsChecklist,
 } from "../../content/skills/backend/skillsList"
 
 import {
@@ -20,6 +21,9 @@ import {
   Content,
   Divider,
   CardContainer,
+  GrayContainer,
+  ExtraSpace,
+  ExtraSpaceCenter,
 } from "../../components/SharedStyles"
 
 const HeroContainer = styled.div`
@@ -130,6 +134,33 @@ const StyledCard = styled(ActionCard)`
     margin: 0;
     min-width: min(100%, 240px);
   }
+`
+
+const ChecklistContainer = styled.div`
+  display: flex;
+  margin-bottom: 1.5rem;
+`
+
+const TwoColumnContent = styled.div`
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  @media (max-width: ${props => props.theme.breakpoints.l}) {
+    flex-direction: column;
+  }
+`
+
+const ChecklistColumn = styled.div`
+  padding: 0 0.5rem;
+  margin-bottom: 3rem;
+  with: 50%;
+`
+
+const ChecklistItem = styled(HorizontalCard)`
+  border: 0px;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
 `
 
 const BackendSkillsPage = ({ data }) => {
@@ -249,13 +280,37 @@ const BackendSkillsPage = ({ data }) => {
             )
           })}
         </StyledCardGrid>
+        <ExtraSpace />
       </Content>
 
-      <Divider />
-      <BackendSkillsContent />
-      <Divider />
+      <GrayContainer>
+        <Content>
+          <ExtraSpaceCenter>
+            <Divider />
+          </ExtraSpaceCenter>
+          <ChecklistContainer>
+            {skillsChecklist.map((columns, colIndx) => (
+              <TwoColumnContent key={colIndx}>
+                {columns.map((checklist, colIndx) => (
+                  <ChecklistColumn key={colIndx}>
+                    {checklist.map((item, indx) => (
+                      <ChecklistItem
+                        key={`${indx}${item.title}`}
+                        emoji={item.emoji}
+                        title={item.title}
+                        description={item.description}
+                      />
+                    ))}
+                  </ChecklistColumn>
+                ))}
+              </TwoColumnContent>
+            ))}
+          </ChecklistContainer>
+        </Content>
+      </GrayContainer>
 
       <Content>
+        <Divider />
         <h1>Snippets</h1>
         <StyledCardContainer>
           {projectList.snippets(data).map((card, idx) => (
