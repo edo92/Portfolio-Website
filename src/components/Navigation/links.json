@@ -18,6 +18,30 @@
         }
       ]
     },
+
+    {
+      "text": "projects",
+      "ariaLabel": "projects-menu",
+      "items": [
+        {
+          "text": "full stack",
+          "to": "/projects/fullstack"
+        },
+        {
+          "text": "client side",
+          "to": "/projects/client"
+        },
+        {
+          "text": "server side",
+          "to": "/projects/server"
+        },
+        {
+          "text": "snippets",
+          "to": "/projects/snippets"
+        }
+      ]
+    },
+
     {
       "text": "about",
       "to": "/about/",

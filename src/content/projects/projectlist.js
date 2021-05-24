@@ -34,14 +34,14 @@ export const projectslist = {
         alt: "networkx project",
         to: "https://github.com/edo92/NetworkX",
       },
-      {
-        image: data.azureCognitive.childImageSharp.fixed,
-        title: "Face recognition with azure cognitive",
-        description:
-          "Simplified api to make request to Azure face recognition api and saves data to azure cosmos",
-        alt: "azure-face-recognition",
-        to: "https://github.com/edo92/Azure-Face-Recognition-Resources",
-      },
+      // {
+      //   image: data.azureCognitive.childImageSharp.fixed,
+      //   title: "Face recognition with azure cognitive",
+      //   description:
+      //     "Simplified api to make request to Azure face recognition api and saves data to azure cosmos",
+      //   alt: "azure-face-recognition",
+      //   to: "https://github.com/edo92/Azure-Face-Recognition-Resources",
+      // },
     ]
   },
 }

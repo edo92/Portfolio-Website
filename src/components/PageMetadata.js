@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import { Location } from "@reach/router"
 
-const PageMetadata = ({ description, meta, title, image, canonicalUrl }) => {
+const PageMetadata = ({ description, title, image, canonicalUrl }) => {
   const {
     site,
     ogImageDefault,
@@ -128,7 +128,7 @@ const PageMetadata = ({ description, meta, title, image, canonicalUrl }) => {
                 property: `og:site_name`,
                 content: `ejresume.com`,
               },
-            ].concat(meta)}
+            ]}
           >
             <script type="application/ld+json">
               {`

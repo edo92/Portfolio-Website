@@ -61,7 +61,7 @@ const SnippetsPage = ({ data }) => {
             <H2>Snippets</H2>
           </SectionIntro>
           <StyledCardContainer>
-            {projectslist.snippets(data).map((card, idx) => (
+            {/* {projectslist.snippets(data).map((card, idx) => (
               <StyledCard
                 key={idx}
                 title={card.title}
@@ -70,23 +70,13 @@ const SnippetsPage = ({ data }) => {
                 image={card.image}
                 alt={card.alt}
               />
-            ))}
+            ))} */}
           </StyledCardContainer>
         </Content>
       </GrayContainer>
       <Divider />
       <Content id="snippets-projects">
         <StyledCardContainer>
-          {projectslist.projects(data).map((card, idx) => (
-            <StyledCard
-              key={idx}
-              title={card.title}
-              description={card.description}
-              to={card.to}
-              image={card.image}
-              alt={card.alt}
-            />
-          ))}
           {projectslist.projects(data).map((card, idx) => (
             <StyledCard
               key={idx}
