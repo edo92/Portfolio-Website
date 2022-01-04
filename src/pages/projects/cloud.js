@@ -5,7 +5,7 @@ import { graphql } from "gatsby"
 import PageMetadata from "../../components/PageMetadata"
 import * as content from "../../content/projects/content"
 import ActionCard from "../../components/ActionCard"
-import { fullStack } from "../../content/projects/projectlist"
+import { cloud } from "../../content/projects/projectlist"
 
 import {
   CardContainer,
@@ -61,7 +61,7 @@ const ProjectsFullStack = ({ data }) => {
             <H2>Full Stack Applications</H2>
           </SectionIntro>
           <StyledCardContainer>
-            {fullStack.projects(data).map((card, idx) => (
+            {cloud.projects(data).map((card, idx) => (
               <StyledCard
                 key={idx}
                 title={card.title}
@@ -82,7 +82,21 @@ export default ProjectsFullStack
 
 export const query = graphql`
   query {
-    wifi: file(relativePath: { eq: "projects/wifi.png" }) {
+    awsStaticWeb: file(relativePath: { eq: "projects/aws-static-web.png" }) {
+      childImageSharp {
+        fixed(width: 900) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    azureCognitive: file(relativePath: { eq: "projects/azure-cognitive.png" }) {
+      childImageSharp {
+        fixed(width: 900) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    cognito_signin: file(relativePath: { eq: "projects/cognito_signin.png" }) {
       childImageSharp {
         fixed(width: 900) {
           ...GatsbyImageSharpFixed

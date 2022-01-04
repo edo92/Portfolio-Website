@@ -1,67 +1,64 @@
-export const snippets = {
+export const uiux = {
   projects(data) {
     return [
       {
-        image: data.wifi.childImageSharp.fixed,
+        image: data.chatApp.childImageSharp.fixed,
         title: "Chat App",
-        description:
-          "Helps to control wifi network such as seaching for networks connecting to it, monitoring ports, etc..",
+        description: "Modern chat application ui, built from ground up",
         alt: "chat application",
-        to: "https://github.com/edo92/NetworkX",
+        to: "https://github.com/edo92/Chat-App-UI",
+      },
+      {
+        image: data.portfolio.childImageSharp.fixed,
+        title: "Personal portfolio",
+        description:
+          "Personal portfolio website, projects skills, projects, and snippets",
+        alt: "personal portfolio",
+        to: "https://github.com/edo92/Portfolio-Website",
+      },
+      {
+        image: data.paymentUi.childImageSharp.fixed,
+        title: "Payment Ui",
+        description: "Payment Ui integrated with stripe api",
+        alt: "payment ui",
+        to: "https://github.com/edo92/payment-ui",
+      },
+      {
+        image: data.exoui.childImageSharp.fixed,
+        title: "Exo Ui",
+        description: "React ui library",
+        alt: "exoui",
+        to: "https://github.com/edo92/payment-ui",
       },
     ]
   },
 }
 
-export const clientSide = {
+export const cloud = {
   projects(data) {
     return [
       {
-        image: data.wifi.childImageSharp.fixed,
-        title: "Chat App",
+        image: data.awsStaticWeb.childImageSharp.fixed,
+        title: "Static website hosting infrastructure on AWS by CDK",
         description:
-          "Helps to control wifi network such as seaching for networks connecting to it, monitoring ports, etc..",
+          " Deploys react source code to S3, serves website with low latency content delivery network with an origin access identity and Lambda@Edge.",
+        alt: "aws static website",
+        to: "https://github.com/edo92/Aws-Static-Website-CI-CD",
+      },
+      {
+        image: data.azureCognitive.childImageSharp.fixed,
+        title: "Azure cognitive face recognition",
+        description:
+          "Face recognition which identifies age, gender, etc. then it will save the date in cosnos database",
         alt: "chat application",
         to: "https://github.com/edo92/NetworkX",
       },
       {
-        image: data.wifi.childImageSharp.fixed,
-        title: "Chat App",
-        description:
-          "Helps to control wifi network such as seaching for networks connecting to it, monitoring ports, etc..",
-        alt: "chat application",
-        to: "https://github.com/edo92/NetworkX",
-      },
-      {
-        image: data.wifi.childImageSharp.fixed,
-        title: "Chat App",
-        description:
-          "Helps to control wifi network such as seaching for networks connecting to it, monitoring ports, etc..",
-        alt: "chat application",
-        to: "https://github.com/edo92/NetworkX",
-      },
-    ]
-  },
-}
-
-export const fullStack = {
-  projects(data) {
-    return [
-      {
-        image: data.wifi.childImageSharp.fixed,
-        title: "Chat App",
-        description:
-          "Helps to control wifi network such as seaching for networks connecting to it, monitoring ports, etc..",
-        alt: "chat application",
-        to: "https://github.com/edo92/NetworkX",
-      },
-      {
-        image: data.wifi.childImageSharp.fixed,
-        title: "Chat App",
-        description:
-          "Helps to control wifi network such as seaching for networks connecting to it, monitoring ports, etc..",
-        alt: "chat application",
-        to: "https://github.com/edo92/NetworkX",
+        image: data.cognito_signin.childImageSharp.fixed,
+        title: "Aws Cognito user authentication management",
+        description: "asdf",
+        alt: "aws cognito",
+        to: "https://github.com/edo92/AWS-Cognito-User-Managment-React",
       },
     ]
   },

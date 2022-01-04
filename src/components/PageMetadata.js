@@ -5,58 +5,53 @@ import { useStaticQuery, graphql } from "gatsby"
 import { Location } from "@reach/router"
 
 const PageMetadata = ({ description, title, image, canonicalUrl }) => {
-  const {
-    site,
-    ogImageDefault,
-    ogImageBackend,
-    ogImageClient,
-    ogImageMobile,
-  } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            author
-            url
+  const { site, ogImageDefault, ogImageBackend, ogImageClient, ogImageMobile } =
+    useStaticQuery(
+      graphql`
+        query {
+          site {
+            siteMetadata {
+              author
+              url
+            }
           }
-        }
-        ogImageDefault: file(relativePath: { eq: "home/home-hero.png" }) {
-          childImageSharp {
-            fixed(width: 1200) {
-              src
+          ogImageDefault: file(relativePath: { eq: "home/home-hero.png" }) {
+            childImageSharp {
+              fixed(width: 1200) {
+                src
+              }
+            }
+          }
+          ogImageBackend: file(
+            relativePath: { eq: "skills/backend/backend-hero.png" }
+          ) {
+            childImageSharp {
+              fixed(width: 1200) {
+                src
+              }
+            }
+          }
+          ogImageClient: file(
+            relativePath: { eq: "skills/frontend/frontend-hero.png" }
+          ) {
+            childImageSharp {
+              fixed(width: 1200) {
+                src
+              }
+            }
+          }
+          ogImageMobile: file(
+            relativePath: { eq: "skills/mobile/mobile-hero.png" }
+          ) {
+            childImageSharp {
+              fixed(width: 1200) {
+                src
+              }
             }
           }
         }
-        ogImageBackend: file(
-          relativePath: { eq: "skills/backend/backend-hero.png" }
-        ) {
-          childImageSharp {
-            fixed(width: 1200) {
-              src
-            }
-          }
-        }
-        ogImageClient: file(
-          relativePath: { eq: "skills/frontend/frontend-hero.png" }
-        ) {
-          childImageSharp {
-            fixed(width: 1200) {
-              src
-            }
-          }
-        }
-        ogImageMobile: file(
-          relativePath: { eq: "skills/mobile/mobile-hero.png" }
-        ) {
-          childImageSharp {
-            fixed(width: 1200) {
-              src
-            }
-          }
-        }
-      }
-    `
-  )
+      `
+    )
 
   const desc = description || "Eduard Jacobs Personal Profolio Website"
   const siteTitle = "EJ Resume"

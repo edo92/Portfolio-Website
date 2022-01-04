@@ -24,24 +24,15 @@
       "ariaLabel": "projects-menu",
       "items": [
         {
-          "text": "full stack",
-          "to": "/projects/fullstack"
-        },
-        {
-          "text": "client side",
+          "text": "UI / UX",
           "to": "/projects/client"
         },
         {
-          "text": "server side",
-          "to": "/projects/server"
-        },
-        {
-          "text": "snippets",
-          "to": "/projects/snippets"
+          "text": "cloud",
+          "to": "/projects/cloud"
         }
       ]
     },
-
     {
       "text": "about",
       "to": "/about/",

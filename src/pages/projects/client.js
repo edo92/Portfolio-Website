@@ -5,7 +5,7 @@ import { graphql } from "gatsby"
 import PageMetadata from "../../components/PageMetadata"
 import * as content from "../../content/projects/content"
 import ActionCard from "../../components/ActionCard"
-import { clientSide } from "../../content/projects/projectlist"
+import { uiux } from "../../content/projects/projectlist"
 
 import {
   CardContainer,
@@ -61,7 +61,7 @@ const ProjectsClientSide = ({ data }) => {
             <H2>Client Side Applications</H2>
           </SectionIntro>
           <StyledCardContainer>
-            {clientSide.projects(data).map((card, idx) => (
+            {uiux.projects(data).map((card, idx) => (
               <StyledCard
                 key={idx}
                 title={card.title}
@@ -83,6 +83,34 @@ export default ProjectsClientSide
 export const query = graphql`
   query {
     wifi: file(relativePath: { eq: "projects/wifi.png" }) {
+      childImageSharp {
+        fixed(width: 900) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    chatApp: file(relativePath: { eq: "projects/chatapp.png" }) {
+      childImageSharp {
+        fixed(width: 900) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    portfolio: file(relativePath: { eq: "projects/portfolio.png" }) {
+      childImageSharp {
+        fixed(width: 900) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    paymentUi: file(relativePath: { eq: "projects/paymentUi.png" }) {
+      childImageSharp {
+        fixed(width: 900) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    exoui: file(relativePath: { eq: "projects/exoui.png" }) {
       childImageSharp {
         fixed(width: 900) {
           ...GatsbyImageSharpFixed

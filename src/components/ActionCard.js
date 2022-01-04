@@ -84,7 +84,7 @@ const ActionCard = ({
           <Image
             fixed={image}
             alt={alt}
-            imgStyle={{ objectFit: "contain" }}
+            imgStyle={{ objectFit: "cover" }}
             style={{ width: "100%", height: "265px" }}
           />
         )}
