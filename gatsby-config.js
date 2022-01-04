@@ -50,6 +50,7 @@ module.exports = {
         exclude: ["node_modules", ".cache", "public"],
       },
     },
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-gatsby-cloud`,
     // Needed for `gatsby-image`
     `gatsby-plugin-sharp`,
@@ -100,42 +101,6 @@ module.exports = {
       options: {
         name: `content`,
         path: `${__dirname}/src/content`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-sitemap`,
-      options: {
-        query: `{
-            site {
-              siteMetadata {
-                siteUrl
-              }
-            }
-            allSitePage {
-              nodes {
-                path
-              }
-            }
-          }`,
-        serialize: ({ site, allSitePage }) =>
-          allSitePage.nodes
-            .filter(node => {
-              // Filter out 404 pages
-              return !node.path.includes("404")
-            })
-            .map(node => {
-              const path = node.path
-              const url = `${site.siteMetadata.siteUrl}${path}`
-              const changefreq = path.includes(`/${defaultLanguage}/`)
-                ? `weekly`
-                : `monthly`
-              const priority = path.includes(`/${defaultLanguage}/`) ? 0.7 : 0.5
-              return {
-                url,
-                changefreq,
-                priority,
-              }
-            }),
       },
     },
   ],
