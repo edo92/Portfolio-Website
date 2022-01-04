@@ -186,7 +186,7 @@ const Navigation = ({ handleThemeChange, isDarkTheme, path }) => {
                           <NavLink
                             to={section.to}
                             isPartiallyActive={section.isPartiallyActive}
-                            hasSubNav={shouldShowSubNav}
+                            hassubnav={shouldShowSubNav}
                           >
                             <Text id={section.text} />
                           </NavLink>

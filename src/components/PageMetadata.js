@@ -146,7 +146,12 @@ const PageMetadata = ({ description, title, image, canonicalUrl }) => {
 
 PageMetadata.defaultProps = {
   description: `Eduard Jacobs Personal Portfolio Webaite`,
-  meta: ["portfolio", "portfolio website", "portfolio ui/ux"],
+  meta: [
+    {
+      property: `og:type`,
+      content: `website`,
+    },
+  ],
   image: ``,
   title: `EJ Resume`,
 }

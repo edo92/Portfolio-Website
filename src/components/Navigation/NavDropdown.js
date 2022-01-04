@@ -38,7 +38,7 @@ const StyledIcon = styled(Icon)`
 const DropdownList = styled(motion.ul)`
   margin: 0;
   position: absolute;
-  margin-top: ${props => (props.hasSubNav ? `-4.5rem` : `-1rem`)};
+  margin-top: ${props => (props.hassubnav ? `-4.5rem` : `-1rem`)};
   list-style-type: none;
   list-style-image: none;
   top: 100%;
@@ -84,7 +84,7 @@ const listVariants = {
   },
 }
 
-const DropDown = ({ section, hasSubNav }) => {
+const DropDown = ({ section, hassubnav }) => {
   const [isOpen, setIsOpen] = useState(false)
   const ref = createRef()
 
@@ -110,7 +110,7 @@ const DropDown = ({ section, hasSubNav }) => {
 
       {section.items && (
         <DropdownList
-          hasSubNav={hasSubNav}
+          hassubnav={hassubnav}
           animate={isOpen ? "open" : "closed"}
           variants={listVariants}
           initial="closed"
