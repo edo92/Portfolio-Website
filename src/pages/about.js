@@ -145,7 +145,7 @@ const AboutPage = () => {
               <ButtonLinkCustom isSecondary={true} to="/about/#contact">
                 <Text id="contact-me" />
               </ButtonLinkCustom>
-              <Link to="linkedin.com/in/the-ej/">
+              <Link hideArrow={true} to="https://linkedin.com/in/the-ej/">
                 <SocialIcon name="linkedinGR" size="41" />
               </Link>
             </div>

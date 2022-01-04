@@ -20,20 +20,12 @@
         {
           "to": "/backend/",
           "text": "Backend"
-        },
-        {
-          "to": "/mobile/",
-          "text": "Mobile"
         }
       ]
     },
     {
       "title": "projects",
       "links": [
-        {
-          "to": "/projects/apis",
-          "text": "APIs"
-        },
         {
           "to": "/projects/uiux",
           "text": "UI UX"
@@ -54,10 +46,6 @@
         {
           "to": "/about",
           "text": "about"
-        },
-        {
-          "to": "/about#contact-section/",
-          "text": "contact"
         }
       ]
     }

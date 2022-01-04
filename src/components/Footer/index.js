@@ -1,10 +1,10 @@
 import React from "react"
 import styled from "styled-components"
+import Link from "../Link"
 
-import { Mixins } from "../../theme"
 import Icon from "../Icon"
 import Text from "../Text"
-
+import { Mixins } from "../../theme"
 import content from "./content.json"
 
 const StyledFooter = styled.footer`
@@ -94,9 +94,11 @@ const Footer = () => {
     <StyledFooter>
       <FooterTop>
         <SocialIcons>
-          {content.socialLinks.map((link, idx) => {
-            return <SocialIcon key={idx} name={link.icon} size="36" />
-          })}
+          {content.socialLinks.map((link, idx) => (
+            <Link key={idx} hideArrow={true} to={link.to}>
+              <SocialIcon name={link.icon} size="36" />
+            </Link>
+          ))}
         </SocialIcons>
       </FooterTop>
       <LinkGrid>
