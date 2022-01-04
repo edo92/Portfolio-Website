@@ -11,10 +11,6 @@
         {
           "text": "frontend",
           "to": "/skills/frontend"
-        },
-        {
-          "text": "mobile",
-          "to": "/skills/mobile"
         }
       ]
     },
@@ -24,11 +20,11 @@
       "ariaLabel": "projects-menu",
       "items": [
         {
-          "text": "UI / UX",
+          "text": "Client / Ui UX",
           "to": "/projects/client"
         },
         {
-          "text": "cloud",
+          "text": "Backend / Cloud",
           "to": "/projects/cloud"
         }
       ]

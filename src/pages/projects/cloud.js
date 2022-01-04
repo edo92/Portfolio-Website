@@ -89,6 +89,13 @@ export const query = graphql`
         }
       }
     }
+    ecsService: file(relativePath: { eq: "projects/ecs-bluegreen.png" }) {
+      childImageSharp {
+        fixed(width: 900) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
     azureCognitive: file(relativePath: { eq: "projects/azure-cognitive.png" }) {
       childImageSharp {
         fixed(width: 900) {

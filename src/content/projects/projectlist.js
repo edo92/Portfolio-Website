@@ -26,7 +26,7 @@ export const uiux = {
       {
         image: data.exoui.childImageSharp.fixed,
         title: "Exo Ui",
-        description: "React ui library",
+        description: "Exo-ui is a custom React ui/ux library",
         alt: "exoui",
         to: "https://github.com/edo92/payment-ui",
       },
@@ -46,12 +46,20 @@ export const cloud = {
         to: "https://github.com/edo92/Aws-Static-Website-CI-CD",
       },
       {
+        image: data.ecsService.childImageSharp.fixed,
+        title: "Aws cdk ecs service infrastructure",
+        description:
+          "Aws elastic container service with blue/green deployment, Includes pipeline for express app, and cdk self update pipeline",
+        alt: "aws ecs service",
+        to: "https://github.com/edo92/Aws-Ecs-BlueGreen-Deployment",
+      },
+      {
         image: data.azureCognitive.childImageSharp.fixed,
         title: "Azure cognitive face recognition",
         description:
           "Face recognition which identifies age, gender, etc. then it will save the date in cosnos database",
         alt: "chat application",
-        to: "https://github.com/edo92/NetworkX",
+        to: "https://github.com/edo92/Azure-Face-Recognition-Resources",
       },
       {
         image: data.cognito_signin.childImageSharp.fixed,
