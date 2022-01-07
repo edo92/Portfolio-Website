@@ -37,6 +37,7 @@ const SectionIntro = styled.div`
 const StyledCard = styled(ActionCard)`
   min-width: 480px;
   margin: 1rem;
+  padding: 3px;
   border-radius: 2px;
   border: 1px solid ${props => props.theme.colors.text};
   background: ${props => props.theme.colors.background};
@@ -63,11 +64,12 @@ const ProjectShowcase = ({ data }) => {
             {content.projectlist.projects(data).map((card, idx) => (
               <StyledCard
                 key={idx}
+                height={"365px"}
+                to={card.to}
+                alt={card.alt}
+                image={card.image}
                 title={card.title}
                 description={card.description}
-                to={card.to}
-                image={card.image}
-                alt={card.alt}
               />
             ))}
           </StyledCardContainer>

@@ -23,7 +23,6 @@ const ImageWrapper = styled.div`
   align-items: flex-end;
   background: ${props => props.theme.colors.cardGradient};
   box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.1);
-  min-height: 260px;
 `
 
 const Title = styled.h3`
@@ -34,10 +33,6 @@ const Title = styled.h3`
 const Image = styled(Img)`
   width: 100%;
   height: 100%;
-  min-width: 100px;
-  min-height: 100px;
-  max-width: 620px;
-  max-height: 257px;
   @media (max-width: ${props => props.theme.breakpoints.s}) {
     max-width: 311px;
   }
@@ -68,6 +63,7 @@ const ActionCard = ({
   description,
   children,
   className,
+  height,
   isRight,
 }) => {
   const isImageURL = typeof image === "string" && image.includes("http")
@@ -76,8 +72,8 @@ const ActionCard = ({
       to={to}
       href={to}
       target="_blank"
-      className={className}
       hideArrow={true}
+      className={className}
     >
       <ImageWrapper isRight={isRight} className="action-card-image-wrapper">
         {!isImageURL && (
@@ -85,7 +81,7 @@ const ActionCard = ({
             fixed={image}
             alt={alt}
             imgStyle={{ objectFit: "cover" }}
-            style={{ width: "100%", height: "265px" }}
+            style={{ width: "100%", height: height || "265px" }}
           />
         )}
         {isImageURL && (
