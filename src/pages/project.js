@@ -2,10 +2,9 @@ import React from "react"
 import styled from "styled-components"
 import { graphql } from "gatsby"
 
-import PageMetadata from "../components/PageMetadata"
-import * as content from "../content/projects/content"
+import * as content from "../content/projects"
 import ActionCard from "../components/ActionCard"
-import { projectlist } from "../content/projects/projectlist"
+import PageMetadata from "../components/PageMetadata"
 
 import {
   CardContainer,
@@ -61,7 +60,7 @@ const ProjectShowcase = ({ data }) => {
             <H2>Client Side Applications</H2>
           </SectionIntro>
           <StyledCardContainer>
-            {projectlist.projects(data).map((card, idx) => (
+            {content.projectlist.projects(data).map((card, idx) => (
               <StyledCard
                 key={idx}
                 title={card.title}
