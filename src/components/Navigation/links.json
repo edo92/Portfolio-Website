@@ -14,20 +14,10 @@
         }
       ]
     },
-
     {
-      "text": "projects",
-      "ariaLabel": "projects-menu",
-      "items": [
-        {
-          "text": "Client / Ui UX",
-          "to": "/projects/client"
-        },
-        {
-          "text": "Backend / Cloud",
-          "to": "/projects/cloud"
-        }
-      ]
+      "text": "project",
+      "to": "/project/",
+      "ariaLabel": "project-showcase"
     },
     {
       "text": "about",

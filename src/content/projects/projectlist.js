@@ -1,4 +1,4 @@
-export const uiux = {
+export const projectlist = {
   projects(data) {
     return [
       {
@@ -30,13 +30,7 @@ export const uiux = {
         alt: "exoui",
         to: "https://github.com/edo92/payment-ui",
       },
-    ]
-  },
-}
 
-export const cloud = {
-  projects(data) {
-    return [
       {
         image: data.awsStaticWeb.childImageSharp.fixed,
         title: "Static website hosting infrastructure on AWS by CDK",
