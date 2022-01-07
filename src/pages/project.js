@@ -2,10 +2,10 @@ import React from "react"
 import styled from "styled-components"
 import { graphql } from "gatsby"
 
-import PageMetadata from "../../components/PageMetadata"
-import * as content from "../../content/projects/content"
-import ActionCard from "../../components/ActionCard"
-import { cloud } from "../../content/projects/projectlist"
+import PageMetadata from "../components/PageMetadata"
+import * as content from "../content/projects/content"
+import ActionCard from "../components/ActionCard"
+import { projectlist } from "../content/projects/projectlist"
 
 import {
   CardContainer,
@@ -13,7 +13,7 @@ import {
   Page,
   H2,
   GrayContainer,
-} from "../../components/SharedStyles"
+} from "../components/SharedStyles"
 
 const StyledCardContainer = styled(CardContainer)`
   display: flex;
@@ -48,7 +48,7 @@ const StyledCard = styled(ActionCard)`
   }
 `
 
-const ProjectsFullStack = ({ data }) => {
+const ProjectShowcase = ({ data }) => {
   return (
     <Page>
       <PageMetadata
@@ -58,10 +58,10 @@ const ProjectsFullStack = ({ data }) => {
       <GrayContainer>
         <Content id="snippets-projects">
           <SectionIntro>
-            <H2>Full Stack Applications</H2>
+            <H2>Client Side Applications</H2>
           </SectionIntro>
           <StyledCardContainer>
-            {cloud.projects(data).map((card, idx) => (
+            {projectlist.projects(data).map((card, idx) => (
               <StyledCard
                 key={idx}
                 title={card.title}
@@ -78,10 +78,39 @@ const ProjectsFullStack = ({ data }) => {
   )
 }
 
-export default ProjectsFullStack
+export default ProjectShowcase
 
 export const query = graphql`
   query {
+    chatApp: file(relativePath: { eq: "projects/chatapp.png" }) {
+      childImageSharp {
+        fixed(width: 900) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    portfolio: file(relativePath: { eq: "projects/portfolio.png" }) {
+      childImageSharp {
+        fixed(width: 900) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    paymentUi: file(relativePath: { eq: "projects/paymentUi.png" }) {
+      childImageSharp {
+        fixed(width: 900) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    exoui: file(relativePath: { eq: "projects/exoui.png" }) {
+      childImageSharp {
+        fixed(width: 900) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+
     awsStaticWeb: file(relativePath: { eq: "projects/aws-static-web.png" }) {
       childImageSharp {
         fixed(width: 900) {
