@@ -18,7 +18,7 @@ export const heroContent = data => {
   return {
     title: "PROFESSIONAL SKILLS",
     header: "Full Stack Software Engineer",
-    subtitle: "Experianced in building full stack applications",
+    subtitle: "Experienced in building full stack applications",
     image: data.hero.childImageSharp.fluid,
     alt: "page-wallets-alt",
     buttons: [
