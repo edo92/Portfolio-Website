@@ -147,14 +147,14 @@ export const projectList = {
         title: "AWS ECS Infrastructure with CI CD Pipeline",
         description: "Dockerized containers React, NodeJS, Nginx",
         alt: "dockerized nginx nodejs containers",
-        to: "https://github.com/edo92/AWS-ECS-Hosting-Pipeline",
+        to: "/project",
       },
       {
         image: data.nodearchitecture.childImageSharp.fixed,
         title: "NodeJS Project",
         description: "NodeJS backend",
         alt: "page-index-get-started-eth-image-alt",
-        to: "https://github.com",
+        to: "/project",
       },
     ]
   },

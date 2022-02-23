@@ -96,7 +96,7 @@ const HomePage = ({ data }) => {
             description={"Check out my personal projects"}
           >
             <div>
-              <ButtonLink to="/projects/client">
+              <ButtonLink to="/project">
                 <Text id="portfolio-projects" />
               </ButtonLink>
             </div>

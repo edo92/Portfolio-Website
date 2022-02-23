@@ -34,11 +34,7 @@ const Features = props => {
             <div style={{ padding: "1rem" }}>
               <IconImage key={idx} src={item.image} />
               <h5>{item.title ? item.title : "24/7 Support"}</h5>
-              <p>
-                {item.description
-                  ? item.description
-                  : "It is a long established fact that a reader will be distracted"}
-              </p>
+              <p>{item.description && item.description}</p>
             </div>
           </FeatureItem>
         )
