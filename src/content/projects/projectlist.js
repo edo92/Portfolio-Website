@@ -21,14 +21,14 @@ export const projectlist = {
         title: "Payment Ui",
         description: "Payment Ui integrated with stripe api",
         alt: "payment ui",
-        to: "https://github.com/edo92/payment-ui",
+        to: "https://github.com/edo92/Payment-UI",
       },
       {
         image: data.exoui.childImageSharp.fixed,
         title: "Exo Ui",
         description: "Exo-ui is a custom React ui/ux library",
         alt: "exoui",
-        to: "https://github.com/edo92/payment-ui",
+        to: "https://github.com/edo92/Exo-Ui",
       },
 
       {
